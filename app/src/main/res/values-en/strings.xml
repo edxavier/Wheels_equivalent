@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculate tires equivalence</string>
+    <string name="ancho">Width  (mm)</string>
+    <string name="diametro">Rim (inch)</string>
+    <string name="dif_porc">The new tire has a diameter</string>
+    <string name="conc_vel"><b></b>Note that when your speedometer indicates a speed of 100 kph your actual speed is </string>
+    <string name="dif_porc_mas">% larger than the original \n\n It is therefore concluded that the tires</string>
+    <string name="dif_porc_menos">% smaller than the original. \n  therefore conclude that the tires</string>
+    <string name="dif_porc_no"><b> are not equivalent to each other according to the maximum difference in diameter of ± 3.0% </b></string>
+    <string name="dif_porc_si"><b> are  equivalent to each other according to the maximum difference in diameter of ± 3.0% </b></string>
+    <string name="help1"><b> 1. How to read the side of your tire? </b></string>
+    <string name="help2"><b> 2. Speed rating and load index </b></string>
+    <string name="menu_help">Help</string>
+    <string name="menu_rate">Rate app</string>
+    <string name="menu_share">Share app</string>
+    <string name="paso1">Standard  tire</string>
+    <string name="paso2">New Tire</string>
+    <string name="perfil">Outline</string>
+    <string name="recuerda"><b>Remember:</b></string>
+    <string name="resultados">Results</string>
+    <string name="title_activity_help">Help</string>
+    <string name="titulo1">Calculate the correct diameter for your wheels and tires.</string>
+    <string name="recuerda1">
+       Two tires of different  measurement are equivalent only if the following restrictions are met: \n\n
+
+        Load index  capacity equal to or higher than that indicated by the manufacturer.\n\n
+        Speed code equal to or greater than the tooked at the technical specifications of the vehicle.\n\n
+        Same outside diameter, with a tolerance of + -3.0% on the original tire.\n\n
+
+        Check that the new tire is not too wide as it could rub on the bodywork.
+    </string>
+
+    <string name="help3">
+        <b>3. UTQG code</b> \n\n
+
+        The Classification of quality for a rim (UTQG by its acronym in English) was established by the National Highway Traffic Safety Administration (NHTSA) to test next tire test methods prewritten by the US government and then describes each tire in three main aspects:
+
+        \n\n <b> Wear floor:</b> Indicates the degree of tire wear, and is comparable only among other wheels in the same line of a manufacturer. Therefore, a tire-grade 200 would theoretically twice a tire-grade 100 on a track specified by the US government.
+
+        \n\n <b>Traction:</b> The traction grades are AA, A, B and C (AA being the highest). These grades represent the tire\&#39;s ability to stop on wet pavement without turning and measured on a track specified by the US government. Any tire with less than C is considered unacceptable for use in the streets.
+
+        \n\n <b>Tempeture:</b> The temperature grades, from highest to lowest, are A, B and C. These grades represent the tire\&#39;s ability to dissipate heat under test conditions indoors. Any tire with less than C is considered unacceptable.
+        \n\n
+
+    </string>
+
+
+
+    <string-array name="ancho_array">
+        <item>135</item>
+        <item>145</item>
+        <item>155</item>
+        <item>165</item>
+        <item>175</item>
+        <item>185</item>
+        <item>195</item>
+        <item>205</item>
+        <item>215</item>
+        <item>225</item>
+        <item>235</item>
+        <item>245</item>
+        <item>255</item>
+        <item>265</item>
+        <item>275</item>
+        <item>285</item>
+        <item>295</item>
+        <item>305</item>
+        <item>315</item>
+        <item>325</item>
+        <item>335</item>
+        <item>345</item>
+        <item>355</item>
+    </string-array>
+    <string-array name="perfil_array">
+        <item>15</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+        <item>60</item>
+        <item>65</item>
+        <item>70</item>
+        <item>75</item>
+        <item>80</item>
+        <item>85</item>
+    </string-array>
+    <string-array name="diametro_array">
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+    </string-array>
+    <string name="original">Original</string>
+    <string name="nuevo">New</string>
+
+</resources>

@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">Calcula equivalencia de neumáticos</string>
+    <string name="hello_world" translatable="false">Hello world!</string>
+    <string name="action_settings" translatable="false">Settings</string>
+
+    <string name="nuevo">Nuevo</string>
+    <string name="original">Original</string>
+
+    <string name="paso1">Medida de neumático original</string>
+    <string name="paso2">Medida de neumático nuevo o deseado</string>
+    <string name="resultados">Resultados</string>
+    <string name="dif_porc">El neumático nuevo o deseado posee un diámetro &#32;&#32;</string>
+    <string name="dif_porc_mas">% más grande que el original\n\n Por lo tanto se concluye que los neumáticos &#32;&#32;</string>
+    <string name="dif_porc_menos">% más pequeño que el original.\n\nPor lo tanto se concluye que los neumáticos &#32;&#32;</string>
+    <string name="dif_porc_no"> <b>no son equivalentes entre si según  la máxima diferencia en diámetro de ±3.0% </b></string>
+    <string name="dif_porc_si"><b>son equivalentes entre si según  la máxima diferencia en diámetro de ±3.0%</b> </string>
+
+    <string name="conc_vel"><b>Ten en cuenta que cuando tu marcador indique una velocidad de 100 kph tu velocidad real será de </b> </string>
+
+    <string name="titulo1">Calcula el diámetro  correcto para tus rines y llantas.</string>
+    <string name="ancho">Ancho (mm)</string>
+    <string name="perfil">Perfil (%)</string>
+    <string name="diametro">Rin (pulg)</string>
+
+    <string name="recuerda"> <b>Recuerde:</b></string>
+    <string name="recuerda1">
+        Dos neumáticos de distinta medida son equivalentes si se cumplen las siguientes restricciones: \n\n
+
+        Índice de capacidad de carga igual o superior al indicado por el fabricante.\n\n
+        Código de velocidad igual o superior a los tomados en la ficha técnica del vehículo.\n\n
+        Igual diámetro exterior, con una tolerancia de +-3.0 % con respecto al neumático original.\n\n
+
+        Verifica que el nuevo neumático no sea muy ancho ya que podría rozar en la carrocería
+    </string>
+
+
+    <string-array name="ancho_array">
+        <item>135</item>
+        <item>145</item>
+        <item>155</item>
+        <item>165</item>
+        <item>175</item>
+        <item>185</item>
+        <item>195</item>
+        <item>205</item>
+        <item>215</item>
+        <item>225</item>
+        <item>235</item>
+        <item>245</item>
+        <item>255</item>
+        <item>265</item>
+        <item>275</item>
+        <item>285</item>
+        <item>295</item>
+        <item>305</item>
+        <item>315</item>
+        <item>325</item>
+        <item>335</item>
+        <item>345</item>
+        <item>355</item>
+    </string-array>
+    <string-array name="perfil_array">
+        <item>15</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+        <item>60</item>
+        <item>65</item>
+        <item>70</item>
+        <item>75</item>
+        <item>80</item>
+        <item>85</item>
+    </string-array>
+    <string-array name="diametro_array">
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+    </string-array>
+    <string name="title_activity_help">Ayuda</string>
+    <string name="menu_rate">Calificar app</string>
+    <string name="menu_share">Compartir app</string>
+    <string name="menu_help">Ayuda</string>
+    <string name="id_banner" translatable="false">ca-app-pub-9964109306515647/2489559411</string>
+
+    <string name="help1"><b>1. ¿Cómo leer el costado de tu llanta? </b></string>
+    <string name="help2"><b>2. Clasificación de velocidad e indice de carga</b></string>
+    <string name="help3">
+        <b>3. Código UTQG</b> \n\n
+
+        La Calificación Uniforme de Calidad para una Llanta (UTQG por sus siglas en inglés) fue establecido por la National Highway Traffic Safety Administration (NHTSA) para probar las llantas siguiente métodos de prueba preescritos por el Gobierno de Estados Unidos y después califica cada llanta en los tres aspectos principales:
+
+        \n\n <b> Desgaste del piso:</b> Indica el grado de desgaste de la llanta, y es comparable sólo entre otras llantas dentro de la misma línea de un fabricante. Por ello, una llanta con grado 200 duraría, teóricamente, el doble que una llanta con grado 100 en una pista especificada por el Gobierno de Estados Unidos.
+
+        \n\n <b>Tracción:</b> Los grados de tracción son AA, A, B y C (siendo AA el más alto). Estos grados representan la capacidad de la llanta para detenerse sin girar en pavimento mojado y se miden en una pista especificada por el Gobierno de Estados Unidos. Cualquier llanta con grado menor que C se considera inaceptable para su uso en las calles.
+
+        \n\n <b>Temperatura:</b> Los grados de temperatura, de mayor a menor, son A, B y C. Estos grados representan la capacidad de la llanta para disipar el calor bajo condiciones de prueba en espacios cerrados. Cualquier llanta con grado menor que C se considera inaceptable.
+        \n\n
+
+    </string>
+
+</resources>
