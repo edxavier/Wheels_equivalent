@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Эквивалентность шин</string>
+    <string name="ancho">Ширина (мм)</string>
+    <string name="conc_vel">"<b> Обратите внимание, что когда ваш спидометр показывает скорость 100 км / ч, ваша фактическая скорость равна  </b> "</string>
+    <string name="diametro">Обод (дюймы)</string>
+    <string name="dif_porc">Новая шина имеет диаметр&#32;</string>
+    <string name="dif_porc_mas">"% Больше, чем у оригинала. Поэтому делается вывод, что шины "</string>
+    <string name="dif_porc_menos">% Меньше, чем оригинал. Поэтому сделать вывод, что шины</string>
+    <string name="dif_porc_no"><b> не эквивалентны друг другу в соответствии с максимальной разницей диаметров ± 3.0% </b></string>
+    <string name="dif_porc_si"><b> эквивалентны друг другу в соответствии с максимальной разницей диаметров ± 3.0% </b></string>
+    <string name="eq_diff">Разница (%)</string>
+    <string name="eq_explicacion">Разница (%)</string>
+    <string name="eq_explicacion2_1">\"Исходная шина достигает скорости 100 км / ч вращающийся\"</string>
+    <string name="eq_explicacion2_2">\"Об / мин. С учетом этих оборотов рассчитывается изменение скорости\".</string>
+    <string name="eq_neumatico">Шины</string>
+    <string name="eq_title">Эквивалентные шины для</string>
+    <string name="eq_vel_variacion">\"Изменение скорости\"</string>
+    <string name="menu_help">Помогите</string>
+    <string name="menu_rate">Оценить приложение</string>
+    <string name="menu_remove_ads">Убрать рекламу</string>
+    <string name="menu_share">Поделиться ссылкой</string>
+    <string name="nuevo">Новый \n %1$s/%2$s R%3$s %4$s %5$s</string>
+    <string name="on_billing_error">Покупка не производится</string>
+    <string name="original">Оригинал \n %1$s/%2$s R%3$s %4$s %5$s</string>
+    <string name="paso1">Стандартная шина</string>
+    <string name="paso2">Новая шина</string>
+    <string name="perfil">Контур (%)</string>
+    <string name="recuerda"><b>запомнить:</b></string>
+    <string name="resultados">Результаты</string>
+    <string name="rm_ad_err">Опция не разрешена</string>
+    <string name="show_equivalences">Показать эквивалентности</string>
+    <string name="subtitle">Введите размеры соответствующей шины вашего автомобиля, для шин без профиля, укажите 80:</string>
+    <string name="title_activity_equivalences">Эквивалентность</string>
+    <string name="title_activity_help">Помогите</string>
+    <string name="titulo1">Вычислите правильный диаметр для ваших колес и шин.</string>
+    <string name="recuerda1">Два смешанных шины эквивалентны, если выполняются следующие ограничения будут выполнены:\n\n\n\n         Индекс Грузоподъемность равна или больше, чем указано производителем.\n\n\n         Код больше или равно взятые в техническом листе скорости транспортного средства.\n\n\n         То же наружный диаметр с допуском + -3.0% от исходной шины.\n\n\n\n         Убедитесь, что новая шина не слишком широко, как это может потереть на теле</string>
+    <string name="help1"><b> 1. Как читать стороны вашей шины? </b></string>
+    <string name="help2"><b> 2. Скоростные и индекс нагрузки </b></string>
+    <string name="help3"><b> 3. UTQG код </b>\n\n\n\n        Равномерное Оценка качества для шины (UTQG его сокращение на английском языке) была создана Национальная администрация безопасности дорожного движения (NHTSA), чтобы проверить следующие методы испытаний шин предварительно составленное правительством Соединенных Штатов, а затем квалифицировать каждую шину в три основных аспекта:\n\n        \n\n <b> Wear пол: </b> указывает на степень износа шин, и сравнима только среди других шин в одной и той же линии производителя. Таким образом, класс шины 200 будет теоретически в два раза шина класса 100 на трек, определенный правительством США.\n\n        \n\n <b> Прочность: </b> тяговые сорта АА, А, В и С (АА самый высокий). Эти классы представляют собой способность шины остановиться на мокром асфальте, не оборачиваясь и измеряется на трек, определенный правительством США. Любой обод меньшей степени, чем C считается неприемлемым для использования на улицах.\n\n        \n\n <b> Температура: </b> Степени температуры, от самого высокого до самого низкого, А, В и С. Эти сорта представляют собой способность шины для рассеивания тепла в условиях испытания в закрытых пространствах. Любой обод меньшей степени, чем С считается неприемлемым.</string>
+    <string name="menu_contactor">Контактное лицо</string>
+    <string name="diameter">диаметр = %1$s mm \nнагрузка = %2$s kg \nскорость = %3$s km/h</string>
+    <string name="indice_carga">нагрузка</string>
+    <string name="indice_velocidad">скорость</string>
+    <string name="menu_privacy">Политика конфиденциальности</string>
+    <string name="agregar">Añadir</string>
+    <string name="dialogo_nuevas_medidas">Введите необходимые данные, иначе оставьте поле пустым.</string>
+
+</resources>

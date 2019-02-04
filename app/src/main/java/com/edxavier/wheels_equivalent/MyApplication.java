@@ -1,26 +1,31 @@
 package com.edxavier.wheels_equivalent;
 
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.Tracker;
+import android.content.ContextWrapper;
+
+import com.google.android.gms.ads.MobileAds;
+import com.pixplicity.easyprefs.library.Prefs;
+import com.raizlabs.android.dbflow.config.FlowManager;
+
 /**
  * Created by Eder Xavier Rojas on 16/11/2015.
  */
 public class MyApplication extends android.app.Application {
-    public static GoogleAnalytics analytics;
-    public static Tracker tracker;
+
     // The following line should be changed to include the correct property id.
     private static final String PROPERTY_ID = "UA-70090724-5";
 
     @Override
     public void onCreate() {
         super.onCreate();
-        analytics = GoogleAnalytics.getInstance(this);
-        analytics.setLocalDispatchPeriod(800);
-        tracker = analytics.newTracker(PROPERTY_ID); // Replace with actual tracker/property Id
-        tracker.enableExceptionReporting(true);
+        //MultiDex.install(this);
+        new Prefs.Builder()
+                .setContext(this)
+                .setMode(ContextWrapper.MODE_PRIVATE)
+                .setPrefsName(getPackageName())
+                .setUseDefaultSharedPreference(true)
+                .build();
+        FlowManager.init(this);
+        MobileAds.initialize(this, "ca-app-pub-9964109306515647~1012826218");
     }
 
-    public synchronized  Tracker getTracker() {
-        return tracker;
-    }
 }

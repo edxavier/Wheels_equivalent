@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:id="@+id/adView"
-    android:layout_marginBottom="20dp"
+    android:layout_marginBottom="2dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    ads:adSize="BANNER"
+    ads:adSize="SMART_BANNER"
     ads:adUnitId="ca-app-pub-9964109306515647/2489559411"
     android:layout_gravity="center_horizontal|bottom">
 </com.google.android.gms.ads.AdView>

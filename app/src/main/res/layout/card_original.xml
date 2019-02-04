@@ -1,0 +1,223 @@
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:cardElevation="2dp"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/md_pink_700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/subtitulo1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:paddingTop="4dp"
+                android:gravity="center"
+                android:text="@string/paso1"
+                android:textColor="@color/md_pink_50"
+                android:background="@color/md_pink_800"
+                android:textStyle="bold"
+                app:fontFamily="@font/changa" />
+
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/ancho"
+                    android:textColor="@color/md_pink_50"
+                    app:fontFamily="@font/cuprum"
+                    tools:targetApi="jelly_bean" />
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/original_ancho2"
+                    app:ms_background_color="@color/md_pink_600"
+                    android:textColor="@color/md_white_1000"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_margin="2dp"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    app:ms_dropdown_max_height="300dp"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/perfil"
+                    android:textColor="@color/md_pink_50"
+                    app:fontFamily="@font/cuprum" />
+
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/original_perfil2"
+                    android:layout_margin="2dp"
+                    app:ms_background_color="@color/md_pink_600"
+                    android:textColor="@color/md_white_1000"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    app:ms_dropdown_max_height="300dp"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/diametro"
+                    android:textColor="@color/md_pink_50"
+                    app:fontFamily="@font/cuprum" />
+
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/original_diametro2"
+                    app:ms_background_color="@color/md_pink_600"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/md_white_1000"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    app:ms_dropdown_max_height="300dp"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="0dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/indice_carga"
+                        android:textColor="@color/md_pink_50"
+                        app:fontFamily="@font/cuprum" />
+
+                    <com.jaredrummler.materialspinner.MaterialSpinner
+                        android:id="@+id/original_carga"
+                        app:ms_background_color="@color/md_pink_600"
+                        app:ms_text_color="@color/md_white_1000"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_margin="2dp"
+                        android:textAlignment="center"
+                        app:ms_dropdown_max_height="300dp"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/indice_velocidad"
+                        android:textColor="@color/md_pink_50"
+                        app:fontFamily="@font/cuprum" />
+
+
+                    <com.jaredrummler.materialspinner.MaterialSpinner
+                        android:id="@+id/original_velocidad"
+                        app:ms_background_color="@color/md_pink_600"
+                        app:ms_text_color="@color/md_white_1000"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_margin="2dp"
+                        android:textAlignment="center"
+                        app:ms_dropdown_max_height="300dp"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShowEquivalences"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_gravity="end"
+                app:backgroundTint="@color/md_pink_700"
+                android:text="@string/show_equivalences"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>

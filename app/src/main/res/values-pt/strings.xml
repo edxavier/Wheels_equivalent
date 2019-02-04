@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Equivalência pneu</string>
+    <string name="ancho">Largura (mm)</string>
+    <string name="conc_vel"><b> Observe que quando você marcar indica uma velocidade de 100 quilômetros por hora a velocidade real é </b></string>
+    <string name="diametro">Rin (em)</string>
+    <string name="dif_porc">" O novo pneu tem um diâmetro ou desejado &#32;&#32;"</string>
+    <string name="dif_porc_mas">"% maior que o original Concluímos, pois, que os pneus "</string>
+    <string name="dif_porc_menos">"% Menor do que o original. Portanto, conclui-se que os pneus "</string>
+    <string name="dif_porc_no"><b> não são equivalentes uma à outra de acordo com a diferença de diâmetros de ± 3,0% </b></string>
+    <string name="dif_porc_si"><b> são equivalentes uma à outra de acordo com a diferença de diâmetros de ± 3,0% </b></string>
+    <string name="eq_diff">Diferença (%)</string>
+    <string name="eq_explicacion">Diferença (%)</string>
+    <string name="eq_explicacion2_1">\"O pneu originais atinge uma velocidade de 100 quilômetros por hora pendurado em torno\"</string>
+    <string name="eq_explicacion2_2">\" rpm. Construção variação destes velocidade rpm é calculado.\"</string>
+    <string name="eq_neumatico">Pneus</string>
+    <string name="eq_title">pneus equivalentes</string>
+    <string name="eq_vel_variacion">Variação de velocidade</string>
+    <string name="help1"><b> 1. Como ler o lado do seu pneu? </b></string>
+    <string name="help2"><b> 2. Taxa de velocidade e índice de carga </b></string>
+    <string name="help3"><b> 3. Código UTQG </b>
+
+    <string name="diameter">Diâmetro = %1$s mm \nCarga = %2$s kg \nVelocidade = %3$s km/h</string>
+
+
+        Uniforme Avaliação de Qualidade para um pneu (UTQG por sua sigla em Inglês) foi estabelecida pela Rodovia Tráfico Segurança Administração Nacional (NHTSA) para testar métodos de ensaio de pneus próximos pré-escrita pelo Governo dos Estados Unidos e, em seguida, qualificar cada pneu em três aspectos principais:
+
+        
+
+ <b> Wear andar: </b> indica o grau de desgaste dos pneus, e é comparável apenas entre os outros pneus na mesma linha de um fabricante. Portanto, uma série de pneus 200, teoricamente, duas vezes por grau pneu 100 em uma faixa especificada pelo governo dos EUA.
+
+        
+
+ <b> à tracção: graus </b> O tracção são AA, A, B e C (AA sendo o mais alto). Estas classes representam a capacidade do pneu para parar em pavimento molhado sem se virar e medido em uma faixa especificada pelo governo dos EUA. Qualquer aro menor grau do que C é considerado inaceitável para uso nas ruas.
+
+        
+
+ <b> Temperatura: </b> Graus de temperatura, de alto a baixo, são A, B e C. Estes graus representam a capacidade do pneu para dissipar o calor sob condições de teste em espaços fechados. Tanto o aro menor grau do que C é considerada inaceitável.</string>
+    <string name="menu_help">Ajudar</string>
+    <string name="menu_rate">aplicação de taxa</string>
+    <string name="menu_remove_ads">Remover publicidade</string>
+    <string name="menu_share">Compartilhar App</string>
+    <string name="nuevo">Novo \n %1$s/%2$s R%3$s %4$s %5$s</string>
+    <string name="on_billing_error">compra não realizado</string>
+    <string name="original">Original \n %1$s/%2$s R%3$s %4$s %5$s</string>
+    <string name="paso1">Pneus originais</string>
+    <string name="paso2">Pneu novo</string>
+    <string name="perfil">Perfil (%)</string>
+    <string name="recuerda">" <b>lembrar</b>"</string>
+    <string name="recuerda1">Dois pneus mistos são equivalentes se as seguintes restrições forem atendidas:\n\n\n\n         Carga índice de capacidade igual a ou maior do que o indicado pelo fabricante.\n\n\n         Código maior ou igual às tomadas na ficha técnica da velocidade do veículo.\n\n\n         Diâmetro exterior mesmo com uma tolerância de + -3,0% do original do pneu.\n\n\n\n         Verifique se o pneu novo não é muito grande, uma vez que poderia esfregar no corpo</string>
+    <string name="resultados">Resultados</string>
+    <string name="rm_ad_err">Opção não permitidos</string>
+    <string name="show_equivalences">Mostrar equivalências</string>
+    <string name="subtitle">Introduzir medidas série pneu que corresponde ao seu veículo. para nenhum perfil pneus indicam 80:</string>
+    <string name="title_activity_equivalences">Equivalências</string>
+    <string name="title_activity_help">ajudar</string>
+    <string name="titulo1">Calcula o diâmetro correto para suas rodas e pneus.</string>
+    <string name="menu_contactor">Contato</string>
+    <string name="indice_carga">Carga</string>
+    <string name="indice_velocidad">Velocidade</string>
+    <string name="menu_privacy">Política de privacidade</string>
+    <string name="agregar">Añadir</string>
+    <string name="dialogo_nuevas_medidas">Digite os dados necessários, caso contrário, deixe a caixa em branco.</string>
+</resources>

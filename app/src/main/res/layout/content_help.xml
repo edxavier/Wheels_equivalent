@@ -13,7 +13,7 @@
         android:descendantFocusability="blocksDescendants"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:descendantFocusability="blocksDescendants"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,7 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.edxavier.wheels_equivalent.RobotoTextView
+        <TextView
+            android:fontFamily="@font/changa"
             android:layout_width="match_parent"
             android:text="@string/help1"
             android:gravity="center"
@@ -47,7 +48,10 @@
             android:src="@drawable/captura2"
             android:layout_height="wrap_content" />
 
-        <com.edxavier.wheels_equivalent.RobotoTextView
+        <include layout="@layout/admob_banner" />
+
+        <TextView
+            app:fontFamily="@font/changa"
             android:layout_width="match_parent"
             android:text="@string/help2"
             android:gravity="center"
@@ -60,13 +64,25 @@
             android:src="@drawable/captura3"
             android:layout_height="wrap_content" />
 
-        <com.edxavier.wheels_equivalent.RobotoTextView
+        <TextView
+            app:fontFamily="@font/changa"
             android:layout_width="match_parent"
             android:text="@string/help3"
             android:gravity="center"
             android:paddingTop="16dp"
             android:textSize="15sp"
             android:layout_height="wrap_content" />
+        <com.google.android.gms.ads.AdView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView2"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-9964109306515647/2489559411"
+            android:layout_gravity="center_horizontal|bottom">
+        </com.google.android.gms.ads.AdView>
 
         <ImageView
             android:layout_width="match_parent"
@@ -74,10 +90,9 @@
             android:layout_height="wrap_content" />
 
 
-        <include layout="@layout/admob_banner" />
     </LinearLayout>
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>
 
     </ScrollView>
 

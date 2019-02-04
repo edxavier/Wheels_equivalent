@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:padding="4dp"
+    android:background="@color/md_blue_grey_50"
+    android:id="@+id/row_container"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txtSuggested_tire"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="155/55 R14"
+        android:textColor="@color/md_blue_grey_800"
+        android:textStyle="bold"
+        app:fontFamily="@font/cuprum" />
+
+    <TextView
+        android:id="@+id/txtDifference"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="+2%"
+        android:textColor="@color/md_blue_grey_800"
+        android:textStyle="bold"
+        app:fontFamily="@font/cuprum" />
+
+    <TextView
+        android:id="@+id/txtSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center|end"
+        android:paddingEnd="4dp"
+        android:paddingRight="4dp"
+        android:text="99kph"
+        android:textColor="@color/md_blue_grey_800"
+        android:textStyle="bold"
+        app:fontFamily="@font/cuprum" />
+
+</LinearLayout>

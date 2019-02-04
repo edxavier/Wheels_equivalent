@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Calculate tires equivalence</string>
+    <string name="app_name">Tires equivalence</string>
     <string name="ancho">Width  (mm)</string>
     <string name="diametro">Rim (inch)</string>
-    <string name="dif_porc">The new tire has a diameter</string>
-    <string name="conc_vel"><b></b>Note that when your speedometer indicates a speed of 100 kph your actual speed is </string>
+    <string name="dif_porc">The new tire has a diameter&#32;</string>
+    <string name="conc_vel">"<b>Note that when your speedometer indicates a speed of 100 kph your actual speed is </b> "</string>
     <string name="dif_porc_mas">% larger than the original \n\n It is therefore concluded that the tires</string>
     <string name="dif_porc_menos">% smaller than the original. \n  therefore conclude that the tires</string>
     <string name="dif_porc_no"><b> are not equivalent to each other according to the maximum difference in diameter of ± 3.0% </b></string>
@@ -12,11 +12,11 @@
     <string name="help1"><b> 1. How to read the side of your tire? </b></string>
     <string name="help2"><b> 2. Speed rating and load index </b></string>
     <string name="menu_help">Help</string>
-    <string name="menu_rate">Rate app</string>
+    <string name="menu_rate">Rate App</string>
     <string name="menu_share">Share app</string>
     <string name="paso1">Standard  tire</string>
     <string name="paso2">New Tire</string>
-    <string name="perfil">Outline</string>
+    <string name="perfil">Outline (%)</string>
     <string name="recuerda"><b>Remember:</b></string>
     <string name="resultados">Results</string>
     <string name="title_activity_help">Help</string>
@@ -45,8 +45,7 @@
 
     </string>
 
-
-
+<!--
     <string-array name="ancho_array">
         <item>135</item>
         <item>145</item>
@@ -77,6 +76,7 @@
         <item>25</item>
         <item>30</item>
         <item>35</item>
+        <item>40</item>
         <item>45</item>
         <item>50</item>
         <item>55</item>
@@ -85,6 +85,8 @@
         <item>70</item>
         <item>75</item>
         <item>80</item>
+        <item>81</item>
+        <item>82</item>
         <item>85</item>
     </string-array>
     <string-array name="diametro_array">
@@ -103,7 +105,28 @@
         <item>22</item>
         <item>23</item>
     </string-array>
-    <string name="original">Original</string>
-    <string name="nuevo">New</string>
+-->
+    <string name="diameter" >Diameter = %1$s mm \nMax load = %2$s kg \nMax speed. = %3$s km/h</string>
+    <string name="original">Original \n %1$s/%2$s R%3$s %4$s %5$s</string>
+    <string name="nuevo">New \n %1$s/%2$s R%3$s %4$s %5$s</string>
+    <string name="eq_diff">Difference (%)</string>
+    <string name="eq_explicacion">Difference (%)</string>
+    <string name="eq_explicacion2_2">\" rpm. The velocity variation is calculated on the basis of these rpm.\"</string>
+    <string name="eq_neumatico">Tires</string>
+    <string name="eq_title">Equivalent tires for</string>
+    <string name="eq_vel_variacion">"Speed variation "</string>
+    <string name="menu_remove_ads">Remove ads</string>
+    <string name="on_billing_error">Purchase not made</string>
+    <string name="rm_ad_err">Option not allowed</string>
+    <string name="show_equivalences">Show equivalences</string>
+    <string name="subtitle">Enter dimensions of the corresponding tire of your vehicle, for tires without profile, indicate 80:</string>
+    <string name="title_activity_equivalences">Equivalences</string>
+    <string name="eq_explicacion2_1">\"The original tire reaches a speed of 100 kph prowling \"</string>
+    <string name="menu_contactor">Contact</string>
+    <string name="indice_carga">Load</string>
+    <string name="indice_velocidad">Speed</string>
+    <string name="menu_privacy">Privacy Policy</string>
+    <string name="agregar">Añadir</string>
+    <string name="dialogo_nuevas_medidas">Enter the required data, otherwise leave the box blank.</string>
 
 </resources>

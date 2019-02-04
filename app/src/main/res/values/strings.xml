@@ -1,10 +1,15 @@
 <resources>
-    <string name="app_name">Calcula equivalencia de neumáticos</string>
+    <string name="app_name">Equivalencia de neumáticos</string>
     <string name="hello_world" translatable="false">Hello world!</string>
     <string name="action_settings" translatable="false">Settings</string>
 
-    <string name="nuevo">Nuevo</string>
-    <string name="original">Original</string>
+    <string name="nuevo">Nuevo \n %1$s/%2$s R%3$s %4$s %5$s</string>
+    <string name="original">Original \n %1$s/%2$s R%3$s %4$s %5$s</string>
+
+    <string name="velocity" translatable="false">V = %1$s kph</string>
+    <string name="rpm" translatable="false">%1$s rpm \n=\n %2$s km/h</string>
+    <string name="diameter">Diámetro = %1$s mm \nCarga max. = %2$s kg \nVel. max. = %3$s km/h</string>
+
 
     <string name="paso1">Medida de neumático original</string>
     <string name="paso2">Medida de neumático nuevo o deseado</string>
@@ -34,7 +39,7 @@
     </string>
 
 
-    <string-array name="ancho_array">
+    <string-array name="ancho_array" translatable="false">
         <item>135</item>
         <item>145</item>
         <item>155</item>
@@ -59,11 +64,12 @@
         <item>345</item>
         <item>355</item>
     </string-array>
-    <string-array name="perfil_array">
+    <string-array name="perfil_array" translatable="false">
         <item>15</item>
         <item>25</item>
         <item>30</item>
         <item>35</item>
+        <item>40</item>
         <item>45</item>
         <item>50</item>
         <item>55</item>
@@ -72,9 +78,11 @@
         <item>70</item>
         <item>75</item>
         <item>80</item>
+        <item>81</item>
+        <item>82</item>
         <item>85</item>
     </string-array>
-    <string-array name="diametro_array">
+    <string-array name="diametro_array" translatable="false">
         <item>10</item>
         <item>11</item>
         <item>12</item>
@@ -91,10 +99,12 @@
         <item>23</item>
     </string-array>
     <string name="title_activity_help">Ayuda</string>
-    <string name="menu_rate">Calificar app</string>
-    <string name="menu_share">Compartir app</string>
+    <string name="menu_rate">Calificar aplicación</string>
+    <string name="menu_share">Compartir App</string>
     <string name="menu_help">Ayuda</string>
     <string name="id_banner" translatable="false">ca-app-pub-9964109306515647/2489559411</string>
+    <string name="id_interstical" translatable="false">ca-app-pub-9964109306515647/9612782211</string>
+    <string name="id_native" translatable="false">ca-app-pub-9964109306515647/5042981819</string>
 
     <string name="help1"><b>1. ¿Cómo leer el costado de tu llanta? </b></string>
     <string name="help2"><b>2. Clasificación de velocidad e indice de carga</b></string>
@@ -111,5 +121,24 @@
         \n\n
 
     </string>
+    <string name="show_equivalences">Mostrar equivalencias</string>
+    <string name="title_activity_equivalences">Equivalencias</string>
+    <string name="eq_title">Neumáticos equivalentes para</string>
+    <string name="eq_explicacion">Diferencia (%)</string>
+    <string name="eq_neumatico">Neumáticos</string>
+    <string name="eq_diff">Diferencia (%)</string>
+    <string name="eq_vel_variacion">Variación de velocidad</string>
+    <string name="eq_explicacion2_1">"El neumático original alcanza una velocidad de 100 kph rondando a "</string>
+    <string name="eq_explicacion2_2">" rpm. Se calcula la variación de la velocidad tomando como base estas rpm."</string>
+    <string name="menu_remove_ads">Quitar publicidad</string>
+    <string name="rm_ad_err">Opción no permitida</string>
+    <string name="on_billing_error">Compra no realizada</string>
+    <string name="subtitle">Introducir medidas del neumático de serie que corresponde a su vehículo, para neumáticos sin perfil indicar 80:</string>
+    <string name="menu_contactor">Contactar</string>
+    <string name="indice_carga">Carga</string>
+    <string name="indice_velocidad">Velocidad</string>
+    <string name="menu_privacy">Política de privacidad</string>
+    <string name="agregar">Añadir</string>
+    <string name="dialogo_nuevas_medidas">Ingrese los datos requeridos, de lo contrario deje la caja en blanco.</string>
 
 </resources>

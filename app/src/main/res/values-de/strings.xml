@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Reifen Gleichwertigkeit</string>
+    <string name="ancho">Breite (mm)</string>
+    <string name="conc_vel">"<b>Beachten Sie, dass, wenn Ihr Tachometer eine Geschwindigkeit von 100 km / h anzeigt. Ihre tatsächliche Geschwindigkeit ist </b> "</string>
+    <string name="diametro">Felge (inch)</string>
+    <string name="dif_porc">Der neue Reifen hat einen Durchmesser &#32;&#32;</string>
+    <string name="dif_porc_mas">% größer als das Original ist es daher, dass die Reifen abgeschlossen</string>
+    <string name="dif_porc_menos">% kleiner als das Original. Folge folgern, dass die Reifen</string>
+    <string name="dif_porc_no"><b> sind nicht gleichbedeutend mit der maximalen Durchmesserdifferenz von ± 3,0% </b></string>
+    <string name="dif_porc_si"><b> entsprechen einander entsprechend der maximalen Durchmesserdifferenz von ± 3,0% </b></string>
+    <string name="eq_diff">Unterschied (%)</string>
+    <string name="eq_explicacion">Unterschied (%)</string>
+    <string name="eq_neumatico">Reifen</string>
+    <string name="eq_title">Reifen äquivalente</string>
+    <string name="eq_vel_variacion">Drehzahländerung</string>
+    <string name="help1"><b>1. Wie die Seite des Reifens zu lesen?</b></string>
+    <string name="help2"><b>2. Klassifizierung von Drehzahl und Last-Index</b></string>
+    <string name="help3">"   <b>3. UTQG-Code</b>\n   Einheitliche Qualitätsbewertung für einen Reifen (UTQG für seine Abkürzung in Englisch) wurde von der National Highway Traffic Safety Administration (NHTSA), errichtet durch die Regierung der Vereinigten Staaten prewritten nächste Reifentestmethoden zu testen und dann jeden Reifen qualifizieren drei wesentliche Aspekte:\n    \n   <b> Verschleiß Boden: </b>\n   Zeigt den Grad des Reifenverschleiß und ist vergleichbar nur unter anderen Reifen innerhalb der gleichen Zeile eines Herstellers. Daher ist ein Reifen Klasse 200 würde theoretisch zweimal Reifen Klasse 100 auf einer von der US-Regierung festgelegten Spur.\n   \n   <b> Tensile: </b> Die Traktions Typen sind AA, A, B und C (AA ist die höchste). Diese Typen stellen die Fähigkeit des Reifens auf nasser Fahrbahn zu stoppen, ohne zu Drehen und auf einer Strecke, gemessen von der US-Regierung festgelegt . Jede Felge geringeres Maß als C unannehmbar betrachtet ist für den Einsatz in den Straßen.\n   \n   <b> Temperatur: </b> Temperaturgrade , vom höchsten zum niedrigsten, sind A, B und C. Diese Typen stellen die Fähigkeit des Reifens Wärme unter Testbedingungen in geschlossenen Räumen, zu zerstreuen. Jede Felge geringerem Maße als C ist nicht akzeptabel angesehen.\n   "</string>
+    <string name="menu_help">Hilfe</string>
+    <string name="menu_rate">bewerten App</string>
+    <string name="menu_remove_ads">entfernen Sie Werbung</string>
+    <string name="menu_share">Teilen App</string>
+    <string name="nuevo">Neu \n %1$s/%2$s R%3$s %4$s %5$s</string>
+    <string name="on_billing_error">Kauf nicht gemacht</string>
+    <string name="original">Original \n %1$s/%2$s R%3$s %4$s %5$s</string>
+    <string name="paso1">Als Original-Reifen</string>
+    <string name="paso2">Neue Reifen</string>
+    <string name="perfil">Skizzieren (%)</string>
+    <string name="recuerda"><b> Denken Sie daran: </b></string>
+    <string name="recuerda1">Zwei Mischbereifung sind gleichwertig, wenn die folgenden Einschränkungen erfüllt sind:\n\n\n\n         Tragfähigkeitsindex gleich oder größer als die vom Hersteller angegeben.\n\n\n         Code größer oder gleich die in dem technischen Blatt der Fahrzeuggeschwindigkeit gemacht.\n\n\n         Gleiches Außendurchmesser mit einer Toleranz von + -3,0% von den ursprünglichen Reifen.\n\n\n\n         Überprüfen Sie, ob der neue Reifen nicht zu breit ist, wie es auf den Körper reiben könnte</string>
+    <string name="resultados">Ergebnisse</string>
+    <string name="rm_ad_err">Option nicht erlaubt</string>
+    <string name="show_equivalences">Äquivalenzen anzeigen</string>
+    <string name="subtitle">Geben Sie die Abmessungen des entsprechenden Reifens Ihres Fahrzeugs, für Reifen ohne Profil, geben Sie 80:</string>
+    <string name="title_activity_equivalences">Äquivalenzen</string>
+    <string name="title_activity_help">Hilfe</string>
+    <string name="titulo1">Berechnen Sie den richtigen Durchmesser für Ihre Räder und Felgen.</string>
+    <string name="eq_explicacion2_1">\"Der ursprüngliche Reifen erreicht eine Geschwindigkeit von 100 km / h Prowling \"</string>
+    <string name="eq_explicacion2_2">\" rpm\" Die Geschwindigkeitsänderung wird auf der Grundlage dieser U / min berechnet. \"</string>
+    <string name="menu_contactor">Kontakt</string>
+    <string name="diameter">Durchmesser = %1$s mm \nTragfähigkeit = %2$s kg \nGeschwindigkeit = %3$s km/h</string>
+    <string name="indice_carga">Belastung</string>
+    <string name="indice_velocidad">Geschwindigkeit</string>
+    <string name="menu_privacy">Datenschutzrichtlinie</string>
+    <string name="agregar">Añadir</string>
+    <string name="dialogo_nuevas_medidas">Geben Sie die erforderlichen Daten ein, andernfalls lassen Sie das Feld leer.</string>
+
+</resources>
