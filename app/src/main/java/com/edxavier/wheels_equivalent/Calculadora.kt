@@ -391,7 +391,7 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         return if (Prefs.getInt("num_show_interstical", 0) >= Prefs.getInt("show_after", 5)) {
             Prefs.putInt("num_show_interstical", 0)
             val r = Random()
-            val rnd = r.nextInt(10 - 5) + 10
+            val rnd = r.nextInt(7 - 5) + 7
             Prefs.putInt("show_after", rnd)
             true
         } else

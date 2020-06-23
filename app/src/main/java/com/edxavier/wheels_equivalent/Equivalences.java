@@ -62,7 +62,7 @@ public class Equivalences extends AppCompatActivity{
             String carga = b.getString("carga_o");
             String vel = b.getString("velocidad_o");
 
-            float [] rines = new float[]{diametro_o -1, diametro_o, diametro_o+1};
+            float [] rines = new float[]{diametro_o -2, diametro_o -1, diametro_o, diametro_o+1,diametro_o+2};
             for (float rin : rines) {
                 for (String mWidth : mWidths) {
                     float width = Float.parseFloat(mWidth);
