@@ -6,13 +6,13 @@
     <string name="nuevo">Nuevo \n %1$s/%2$s R%3$s %4$s %5$s</string>
     <string name="original">Original \n %1$s/%2$s R%3$s %4$s %5$s</string>
 
-    <string name="velocity" translatable="false">V = %1$s kph</string>
+    <string name="velocity" translatable="false">V = %1$s km/h</string>
     <string name="rpm" translatable="false">%1$s rpm \n=\n %2$s km/h</string>
     <string name="diameter">Diámetro = %1$s mm \nCarga max. = %2$s kg \nVel. max. = %3$s km/h</string>
 
 
     <string name="paso1">Medida de neumático original</string>
-    <string name="paso2">Medida de neumático nuevo o deseado</string>
+    <string name="paso2">Medida de neumático nuevo</string>
     <string name="resultados">Resultados</string>
     <string name="dif_porc">El neumático nuevo o deseado posee un diámetro &#32;&#32;</string>
     <string name="dif_porc_mas">% más grande que el original\n\n Por lo tanto se concluye que los neumáticos &#32;&#32;</string>
@@ -20,7 +20,7 @@
     <string name="dif_porc_no"> <b>no son equivalentes entre si según  la máxima diferencia en diámetro de ±3.0% </b></string>
     <string name="dif_porc_si"><b>son equivalentes entre si según  la máxima diferencia en diámetro de ±3.0%</b> </string>
 
-    <string name="conc_vel"><b>Ten en cuenta que cuando tu marcador indique una velocidad de 100 kph tu velocidad real será de </b> </string>
+    <string name="conc_vel"><b>Ten en cuenta que cuando tu marcador indique una velocidad de 100 km/h tu velocidad real será de </b> </string>
 
     <string name="titulo1">Calcula el diámetro  correcto para tus rines y llantas.</string>
     <string name="ancho">Ancho (mm)</string>
@@ -128,7 +128,7 @@
     <string name="eq_neumatico">Neumáticos</string>
     <string name="eq_diff">Diferencia (%)</string>
     <string name="eq_vel_variacion">Variación de velocidad</string>
-    <string name="eq_explicacion2_1">"El neumático original alcanza una velocidad de 100 kph rondando a "</string>
+    <string name="eq_explicacion2_1">"El neumático original alcanza una velocidad de 100 km/h rondando a "</string>
     <string name="eq_explicacion2_2">" rpm. Se calcula la variación de la velocidad tomando como base estas rpm."</string>
     <string name="menu_remove_ads">Quitar publicidad</string>
     <string name="rm_ad_err">Opción no permitida</string>

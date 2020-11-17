@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.afollestad.materialdialogs.customview.getCustomView
@@ -29,6 +31,7 @@ import kotlinx.android.synthetic.main.card_original.*
 import kotlinx.android.synthetic.main.card_resultados.*
 import kotlinx.android.synthetic.main.dialog_inputs.view.*
 import java.util.*
+import kotlin.math.roundToInt
 
 
 class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
@@ -81,7 +84,7 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         bp = BillingProcessor.newBillingProcessor(this, BuildConfig.APP_BILLING_PUB_KEY, BuildConfig.MERCHANT_ID, this)
         bp?.initialize()
 
-        InitData()
+        initData()
 
         preestablecerDatos()
         calcular_equivalencia()
@@ -188,7 +191,7 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         }
     }
 
-    fun loadBanner(){
+    private fun loadBanner(){
         if (!Prefs.getBoolean("ads_removed", false)) {
 
             adView.visibility = View.GONE
@@ -276,7 +279,7 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         return super.onOptionsItemSelected(item)
     }
 
-    internal fun InitData() {
+    private fun initData() {
         InitDB.InitPerfil()
         InitDB.InitAncho()
         InitDB.InitRines()
@@ -284,7 +287,7 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         InitDB.InitVelocidades()
     }
 
-    internal fun calcular_equivalencia() {
+    private fun calcular_equivalencia() {
 
         Prefs.putInt("opi", original_perfil2.selectedIndex)
         Prefs.putInt("oai", original_ancho2.selectedIndex)
@@ -317,8 +320,8 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         val vvelocidadN = velocidadesAdapter!!.getItem(nuevo_velocidad.selectedIndex)!!.valor
 
 
-        val diametro_total_orig = Math.round(ancho_o!! * (perfil_o / 100) * 2 + diametro_o * 25.4).toFloat()
-        val diametro_total_nuevo = Math.round(ancho_n * (perfil_n / 100) * 2 + diametro_n * 25.4).toFloat()
+        val diametro_total_orig = (ancho_o!! * (perfil_o / 100) * 2 + diametro_o * 25.4).roundToInt().toFloat()
+        val diametro_total_nuevo = (ancho_n * (perfil_n / 100) * 2 + diametro_n * 25.4).roundToInt().toFloat()
 
         val diferencia_porc = (diametro_total_nuevo / diametro_total_orig - 1) * 100
         //val diferencia_mm = diametro_total_nuevo - diametro_total_orig
@@ -343,12 +346,12 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
 
         if (diferencia_porc >= -3.0 && diferencia_porc <= 3.0) {
             concl += " " + resources.getString(R.string.dif_porc_si)
-            conclusion.setTextColor(resources.getColor(R.color.md_green_100))
-            conc_velocidad.setTextColor(resources.getColor(R.color.md_green_100))
+            conclusion.setTextColor(ContextCompat.getColor(this, R.color.md_green_700))
+            conc_velocidad.setTextColor(ContextCompat.getColor(this, R.color.md_green_700))
         } else {
             concl += " " + resources.getString(R.string.dif_porc_no)
-            conclusion.setTextColor(resources.getColor(R.color.md_yellow_100))
-            conc_velocidad.setTextColor(resources.getColor(R.color.md_yellow_100))
+            conclusion.setTextColor(ContextCompat.getColor(this, R.color.md_yellow_700))
+            conc_velocidad.setTextColor(ContextCompat.getColor(this, R.color.md_yellow_700))
         }
 
         conclusion.text = concl
@@ -364,12 +367,12 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         */
         val vel = (100.toFloat() * 1000.toFloat() / 3600.toFloat()).toDouble() // m/s
         val diametro_original = (ancho_o!! * (perfil_o / 100) * 2 + diametro_o * 25.4) / 1000 //metros
-        val diametro_nuevo = (ancho_n * (perfil_n / 100) * 2 + diametro_n * 25.4) / 1000 //metros
+        val diametroNuevo = (ancho_n * (perfil_n / 100) * 2 + diametro_n * 25.4) / 1000 //metros
         val w = vel / diametro_original// rad/seg
         val rpm = 60 * w / (Math.PI * 2) //rpm
 
         //teniendo las rpm del neumatico original a 100kph calculamos la velociada del nuevo a esas mismas rpm
-        val velocidad = w * diametro_nuevo * 3600 / 1000 //kmh
+        val velocidad = w * diametroNuevo * 3600 / 1000 //kmh
         txt_rpm.text = String.format(getString(R.string.rpm), String.format(Locale.getDefault(), "%.1f", rpm), String.format(Locale.getDefault(), "%.1f", 100.0f))
         txt_rpm_new.text = String.format(getString(R.string.rpm), String.format(Locale.getDefault(), "%.1f", rpm), String.format(Locale.getDefault(), "%.1f", velocidad))
 
@@ -377,21 +380,21 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
 
         //txt_velN.setText(String.format(getString(R.string.velocity), String.format(Locale.getDefault(),"%.1f", velocidad)));
 
-        conc_velocidad.text = getString(R.string.conc_vel) + " " + String.format("%.1f", velocidad) + " kph"
+        conc_velocidad.text = getString(R.string.conc_vel) + " " + String.format("%.1f", velocidad) + " km/h"
 
     }
 
 
-    fun isTimeToAds(): Boolean {
+    private fun isTimeToAds(): Boolean {
         val ne = Prefs.getInt("num_show_interstical", 0)
         //val sa = Prefs.getInt("show_after", 0)
         //Log.e("EDER", String.valueOf(ne));
         //Log.e("EDER", String.valueOf(sa));
         Prefs.putInt("num_show_interstical", ne + 1)
-        return if (Prefs.getInt("num_show_interstical", 0) >= Prefs.getInt("show_after", 5)) {
+        return if (Prefs.getInt("num_show_interstical", 0) >= Prefs.getInt("show_after", 4)) {
             Prefs.putInt("num_show_interstical", 0)
             val r = Random()
-            val rnd = r.nextInt(7 - 5) + 7
+            val rnd = r.nextInt(5 - 3) + 3
             Prefs.putInt("show_after", rnd)
             true
         } else
@@ -400,7 +403,7 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
     }
 
 
-    fun showInterstical() {
+    private fun showInterstitial() {
         mInterstitialAd?.let {
             if (mInterstitialAd!!.isLoaded) {
                 mInterstitialAd!!.show()
@@ -411,13 +414,13 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
 
     fun requestInterstical() {
         val adRequest = AdRequest.Builder()
-                .addTestDevice("0B307F34E3DDAF6C6CAB28FAD4084125")
+                .addTestDevice("AC5F34885B0FE7EF03A409EB12A0F949")
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build()
         mInterstitialAd = InterstitialAd(applicationContext)
-        mInterstitialAd!!.setAdUnitId(applicationContext.resources.getString(R.string.id_interstical))
+        mInterstitialAd!!.adUnitId = applicationContext.resources.getString(R.string.id_interstical)
 
-        if (!mInterstitialAd!!.isLoaded())
+        if (!mInterstitialAd!!.isLoaded)
             mInterstitialAd!!.loadAd(adRequest)
     }
 
@@ -425,7 +428,7 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         super.onActivityResult(requestCode, resultCode, data)
         //showInterstical()
         if (isTimeToAds()) {
-            showInterstical()
+            showInterstitial()
             requestInterstical()
         }
 

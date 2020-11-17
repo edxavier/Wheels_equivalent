@@ -1,9 +1,9 @@
     <androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="2dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="12dp"
         android:layout_margin="8dp"
-        app:cardBackgroundColor="@color/md_orange_700"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -20,7 +20,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:paddingTop="4dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="8dp"
                 android:text="@string/paso2"
                 android:textColor="@color/md_orange_50"
                 android:textStyle="bold"
@@ -28,11 +29,12 @@
 
 
             <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false">
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -47,13 +49,11 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="sans-serif-condensed"
                         android:text="@string/ancho"
-                        android:textColor="@color/md_orange_50"
                         app:fontFamily="@font/cuprum" />
 
 
                     <com.jaredrummler.materialspinner.MaterialSpinner
-                        app:ms_background_color="@color/md_orange_600"
-                        app:ms_text_color="@color/md_white_1000"
+                        app:ms_background_color="@color/md_orange_50"
                         android:id="@+id/nuevo_ancho2"
                         android:gravity="center"
                         android:textStyle="bold"
@@ -81,14 +81,12 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="sans-serif-condensed"
                         android:text="@string/perfil"
-                        android:textColor="@color/md_orange_50"
                         app:fontFamily="@font/cuprum" />
 
 
 
                     <com.jaredrummler.materialspinner.MaterialSpinner
-                        app:ms_background_color="@color/md_orange_600"
-                        app:ms_text_color="@color/md_white_1000"
+                        app:ms_background_color="@color/md_orange_50"
                         android:id="@+id/nuevo_perfil2"
                         android:gravity="center"
                         android:textStyle="bold"
@@ -115,14 +113,12 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="sans-serif-condensed"
                         android:text="@string/diametro"
-                        android:textColor="@color/md_orange_50"
                         app:fontFamily="@font/cuprum" />
 
 
                     <com.jaredrummler.materialspinner.MaterialSpinner
                         android:id="@+id/nuevo_diametro2"
-                        app:ms_background_color="@color/md_orange_600"
-                        app:ms_text_color="@color/md_white_1000"
+                        app:ms_background_color="@color/md_orange_50"
                         android:gravity="center"
                         android:textStyle="bold"
                         android:textSize="12sp"
@@ -138,6 +134,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="8dp"
                 android:orientation="horizontal"
@@ -157,14 +154,12 @@
                         android:layout_marginTop="4dp"
                         android:fontFamily="sans-serif-condensed"
                         android:text="@string/indice_carga"
-                        android:textColor="@color/md_orange_50"
                         app:fontFamily="@font/cuprum" />
 
 
                     <com.jaredrummler.materialspinner.MaterialSpinner
                         android:id="@+id/nuevo_carga"
-                        app:ms_background_color="@color/md_orange_600"
-                        app:ms_text_color="@color/md_white_1000"
+                        app:ms_background_color="@color/md_orange_50"
                         android:gravity="center"
                         android:textStyle="bold"
                         android:textSize="12sp"
@@ -189,14 +184,12 @@
                         android:layout_marginTop="4dp"
                         android:fontFamily="sans-serif-condensed"
                         android:text="@string/indice_velocidad"
-                        android:textColor="@color/md_orange_50"
                         app:fontFamily="@font/cuprum" />
 
 
                     <com.jaredrummler.materialspinner.MaterialSpinner
                         android:id="@+id/nuevo_velocidad"
-                        app:ms_background_color="@color/md_orange_600"
-                        app:ms_text_color="@color/md_white_1000"
+                        app:ms_background_color="@color/md_orange_50"
                         android:gravity="center"
                         android:textStyle="bold"
                         android:textSize="12sp"

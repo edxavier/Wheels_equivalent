@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Calculadora">
 
-    <com.google.android.gms.ads.AdView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:visibility="gone"
         android:layout_width="0dp"
@@ -97,10 +96,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:theme="@style/ThemeOverlay.MaterialComponents.Dark"
+            android:theme="@style/AppTheme"
             app:backgroundTint="?attr/colorPrimary"
-            app:elevation="4dp"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            app:elevation="4dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_add"
@@ -109,6 +107,7 @@
             android:src="@drawable/ic_add"
             app:elevation="2dp"
             app:fabSize="mini"
+            app:tint="@color/md_white_1000"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

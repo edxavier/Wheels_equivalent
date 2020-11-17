@@ -1,9 +1,9 @@
     <androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="2dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="12dp"
         android:layout_margin="8dp"
-        app:cardBackgroundColor="@color/md_light_green_500"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -15,7 +15,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/md_light_green_700"
+                android:background="@color/md_light_green_800"
                 android:gravity="center"
                 android:padding="4dp"
                 android:text="@string/resultados"
@@ -40,7 +40,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:background="@color/md_light_green_600"
+                        android:background="@color/md_light_green_700"
                         android:fontFamily="sans-serif-condensed"
                         android:gravity="center"
                         android:padding="4dp"
@@ -54,7 +54,6 @@
                         android:layout_height="match_parent"
                         android:layout_margin="8dp"
                         android:text="Diametro total original"
-                        android:textColor="@color/md_light_green_50"
                         app:fontFamily="@font/changa" />
 
                     <TextView
@@ -64,16 +63,16 @@
                         android:layout_gravity="center"
                         android:layout_margin="8dp"
                         android:textAlignment="center"
-                        android:textColor="@color/md_light_green_50"
                         android:textStyle="bold"
                         app:fontFamily="@font/cuprum" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:tint="@color/md_light_green_50"
-                        android:layout_width="wrap_content"
+                    <com.airbnb.lottie.LottieAnimationView
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_speedometer"
-                        android:layout_height="match_parent" />
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/speed" />
 
 
 
@@ -105,7 +104,6 @@
                         android:layout_gravity="center"
                         android:layout_margin="8dp"
                         android:text="Diametro total nuevo"
-                        android:textColor="@color/md_light_green_50"
                         app:fontFamily="@font/changa" />
 
                     <TextView
@@ -115,16 +113,17 @@
                         android:layout_gravity="center"
                         android:layout_margin="8dp"
                         android:textAlignment="center"
-                        android:textColor="@color/md_light_green_50"
                         android:textStyle="bold"
                         app:fontFamily="@font/cuprum" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:tint="@color/md_light_green_50"
-                        android:layout_width="wrap_content"
+                    <com.airbnb.lottie.LottieAnimationView
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_speedometer"
-                        android:layout_height="match_parent" />
+                        android:id="@+id/animation_view"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/speed" />
 
 
 
@@ -140,7 +139,6 @@
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:text="El nuevo ne:"
-                android:textColor="@color/md_light_green_50"
                 app:fontFamily="@font/cuprum" />
 
             <TextView

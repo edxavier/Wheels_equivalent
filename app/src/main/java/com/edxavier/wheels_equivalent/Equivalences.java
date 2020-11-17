@@ -121,9 +121,11 @@ public class Equivalences extends AppCompatActivity{
     Equivalence son_equivalentes(float ancho_n,   float perfil_n, float diametro_n){
         Equivalence equivalence = new Equivalence();
         float diametro_total_orig = (float) Math.round( (ancho_o * (perfil_o/100)) * 2 + (diametro_o * 25.4));
-        float diametro_total_nuevo = (float) Math.round( (ancho_n * (perfil_n/100)) * 2 + (diametro_n * 25.4));
+        double v = (ancho_n * (perfil_n / 100)) * 2 + (diametro_n * 25.4);
+
+        float diametro_total_nuevo = (float) Math.round(v);
         double diametro_original = ((ancho_o * (perfil_o / 100)) * 2 + (diametro_o * 25.4)) / 1000; //metros
-        double diametro_nuevo = ((ancho_n * (perfil_n / 100)) * 2 + (diametro_n * 25.4)) / 1000; //metros
+        double diametro_nuevo = v / 1000; //metros
 
         float diferencia_porc = ((diametro_total_nuevo/diametro_total_orig)-1)*100;
         float diferencia_mm = diametro_total_nuevo - diametro_total_orig;
