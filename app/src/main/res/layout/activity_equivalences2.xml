@@ -51,6 +51,18 @@
             android:id="@+id/linearLayout">
 
 
+            <FrameLayout
+                android:background="@color/md_grey_100"
+                android:layout_marginTop="8dp"
+                android:id="@+id/nativeAdFrameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
             <com.google.android.gms.ads.AdView
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:ads="http://schemas.android.com/apk/res-auto"
