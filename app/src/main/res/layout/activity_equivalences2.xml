@@ -42,24 +42,12 @@
 
         <LinearLayout
             android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             android:id="@+id/linearLayout">
-
-
-            <FrameLayout
-                android:background="@color/md_grey_100"
-                android:layout_marginTop="8dp"
-                android:id="@+id/nativeAdFrameLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
 
 
@@ -75,6 +63,13 @@
                 ads:adUnitId="ca-app-pub-9964109306515647/2489559411"
                 android:layout_gravity="center_horizontal|bottom">
             </com.google.android.gms.ads.AdView>
+
+            <FrameLayout
+                android:background="@color/md_grey_100"
+                android:layout_marginTop="1dp"
+                android:id="@+id/nativeAdFrameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
             <TextView
                 style="@style/Base.TextAppearance.AppCompat.Subhead"

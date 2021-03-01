@@ -62,6 +62,12 @@
                 <include layout="@layout/card_original" />
                 <include layout="@layout/card_nuevo" />
 
+                <FrameLayout
+                    android:background="@color/md_grey_100"
+                    android:layout_marginTop="1dp"
+                    android:id="@+id/nativeAdFrameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
                 <include layout="@layout/card_resultados" />
 

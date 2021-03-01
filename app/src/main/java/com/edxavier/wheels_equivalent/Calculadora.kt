@@ -1,5 +1,6 @@
 package com.edxavier.wheels_equivalent
 
+import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
@@ -18,10 +19,16 @@ import com.afollestad.materialdialogs.customview.customView
 import com.afollestad.materialdialogs.customview.getCustomView
 import com.anjlab.android.iab.v3.BillingProcessor
 import com.anjlab.android.iab.v3.TransactionDetails
+import com.edxavier.wheels_equivalent.databinding.ActivityCalculadoraBinding
+import com.edxavier.wheels_equivalent.databinding.ActivityEquivalences2Binding
+import com.edxavier.wheels_equivalent.databinding.AdNativeLayoutBinding
 import com.edxavier.wheels_equivalent.db.*
 import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.nativead.NativeAd
+import com.google.android.gms.ads.nativead.NativeAdView
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.pixplicity.easyprefs.library.Prefs
 import com.raizlabs.android.dbflow.config.FlowManager
@@ -38,6 +45,7 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
 
     var bp: BillingProcessor? = null
     var PRODUCT = "remove_ads"
+    lateinit var binding: ActivityCalculadoraBinding
 
     private var analytics: FirebaseAnalytics? = null
     private var anchurasAdapter: ArrayAdapter<Ancho>? = null
@@ -59,6 +67,7 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
                 //Toast.makeText(this, "SHOW ADS ", Toast.LENGTH_LONG).show()
                 requestInterstical()
                 loadBanner()
+                loadNativeAd()
             }
         } catch (e: Exception) {
             Toast.makeText(this, "ERROR on Billing Initialized " + e.message, Toast.LENGTH_LONG).show()
@@ -76,7 +85,9 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.MatAppTheme)
-        setContentView(R.layout.activity_calculadora)
+        //setContentView(R.layout.activity_calculadora)
+        binding = ActivityCalculadoraBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         bottom_bar.replaceMenu(R.menu.menu_main)
         setSupportActionBar(bottom_bar)
         analytics = FirebaseAnalytics.getInstance(this)
@@ -414,8 +425,6 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
 
     fun requestInterstical() {
         val adRequest = AdRequest.Builder()
-                .addTestDevice("AC5F34885B0FE7EF03A409EB12A0F949")
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build()
         mInterstitialAd = InterstitialAd(applicationContext)
         mInterstitialAd!!.adUnitId = applicationContext.resources.getString(R.string.id_interstical)
@@ -433,4 +442,55 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         }
 
     }
+
+
+    @SuppressLint("InflateParams")
+    private fun loadNativeAd(){
+        val builder = AdLoader.Builder(this, getString(R.string.id_native))
+        builder.forNativeAd { nativeAd ->
+            try {
+                val adBinding = AdNativeLayoutBinding.inflate(layoutInflater)
+                //val nativeAdview = AdNativeLayoutBinding.inflate(layoutInflater).root
+                binding.nativeAdFrameLayout.removeAllViews()
+                binding.nativeAdFrameLayout.addView(populateNativeAd(nativeAd, adBinding))
+            }catch (e:Exception){}
+        }
+
+        val adLoader = builder.build()
+        adLoader.loadAd(AdRequest.Builder().build())
+    }
+
+    private fun populateNativeAd(nativeAd: NativeAd, adView: AdNativeLayoutBinding): NativeAdView {
+        val nativeAdView = adView.root
+        with(adView){
+            adHeadline.text = nativeAd.headline
+            nativeAdView.headlineView = adHeadline
+            nativeAd.advertiser?.let {
+                adAdvertiser.text = it
+                nativeAdView.advertiserView = adAdvertiser
+            }
+            nativeAd.icon?.let {
+                adIcon.setImageDrawable(it.drawable)
+                //adIcon.load(it.drawable){transformations(RoundedCornersTransformation(radius = 8f))}
+                adIcon.visibility = View.VISIBLE
+                nativeAdView.iconView = adIcon
+            }
+            nativeAd.starRating?.let {
+                adStartRating.rating = it.toFloat()
+                adStartRating.visibility = View.VISIBLE
+                nativeAdView.starRatingView = adStartRating
+            }
+            nativeAd.callToAction?.let {
+                adBtnCallToAction.text = it
+                nativeAdView.callToActionView = adBtnCallToAction
+            }
+            nativeAd.body?.let {
+                adBodyText.text = it
+                nativeAdView.bodyView = adBodyText
+            }
+        }
+        nativeAdView.setNativeAd(nativeAd)
+        return nativeAdView
+    }
+
 }
