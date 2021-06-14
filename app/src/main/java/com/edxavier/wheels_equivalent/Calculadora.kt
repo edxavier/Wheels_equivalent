@@ -26,7 +26,8 @@ import com.edxavier.wheels_equivalent.db.*
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdView
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -415,22 +416,18 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
 
 
     private fun showInterstitial() {
-        mInterstitialAd?.let {
-            if (mInterstitialAd!!.isLoaded) {
-                mInterstitialAd!!.show()
-            }
-        }
-
+        mInterstitialAd?.show(this)
     }
 
     fun requestInterstical() {
-        val adRequest = AdRequest.Builder()
-                .build()
-        mInterstitialAd = InterstitialAd(applicationContext)
-        mInterstitialAd!!.adUnitId = applicationContext.resources.getString(R.string.id_interstical)
-
-        if (!mInterstitialAd!!.isLoaded)
-            mInterstitialAd!!.loadAd(adRequest)
+        val adUnitId = applicationContext.resources.getString(R.string.id_interstical)
+        InterstitialAd.load(this, adUnitId, AdRequest.Builder().build(), object:
+            InterstitialAdLoadCallback(){
+            override fun onAdLoaded(p0: InterstitialAd) {
+                super.onAdLoaded(p0)
+                mInterstitialAd = p0
+            }
+        })
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -29,7 +29,8 @@ import com.edxavier.wheels_equivalent.db.Velocidad;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -429,21 +430,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             int Low = 6;int High = 12;
             int rnd = r.nextInt(High-Low) + Low;
             Prefs.putInt("show_after", rnd);
-
-            AdRequest adRequest = new AdRequest.Builder()
-                    //.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                    .build();
-
-            final InterstitialAd mInterstitialAd = new InterstitialAd(context);
-            mInterstitialAd.setAdUnitId(context.getResources().getString(R.string.id_interstical));
-            mInterstitialAd.setAdListener(new AdListener() {
-                @Override
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    mInterstitialAd.show();
-                }
-            });
-            mInterstitialAd.loadAd(adRequest);
 
         }
     }
