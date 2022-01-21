@@ -13,6 +13,8 @@ import com.raizlabs.android.dbflow.config.FlowManager
  * Created by Eder Xavier Rojas on 16/11/2015.
  */
 class MyApplication : MultiDexApplication() {
+    private lateinit var appOpenManager:AppOpenManager
+
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
         MultiDex.install(this)
@@ -37,6 +39,7 @@ class MyApplication : MultiDexApplication() {
                 ).toList())
                 .build()
         MobileAds.setRequestConfiguration(requestConfig)
+        appOpenManager = AppOpenManager(this);
 
     }
 

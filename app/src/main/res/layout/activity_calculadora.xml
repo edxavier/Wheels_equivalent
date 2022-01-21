@@ -59,8 +59,8 @@
                     app:fontFamily="@font/cuprum" />
 
 
-                <include layout="@layout/card_original" />
-                <include layout="@layout/card_nuevo" />
+                <include layout="@layout/card_original" android:id="@+id/cardOriginal"/>
+                <include layout="@layout/card_nuevo" android:id="@+id/cardNew"/>
 
                 <FrameLayout
                     android:background="@color/md_grey_100"
@@ -69,7 +69,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-                <include layout="@layout/card_resultados" />
+                <include layout="@layout/card_resultados" android:id="@+id/cardResults"/>
 
                 <TextView
                     android:textStyle="bold"

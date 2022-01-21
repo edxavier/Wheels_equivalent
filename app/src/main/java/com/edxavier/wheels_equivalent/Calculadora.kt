@@ -9,18 +9,16 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.TextView
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.afollestad.materialdialogs.customview.getCustomView
 import com.anjlab.android.iab.v3.BillingProcessor
-import com.anjlab.android.iab.v3.TransactionDetails
+import com.anjlab.android.iab.v3.PurchaseInfo
 import com.edxavier.wheels_equivalent.databinding.ActivityCalculadoraBinding
-import com.edxavier.wheels_equivalent.databinding.ActivityEquivalences2Binding
 import com.edxavier.wheels_equivalent.databinding.AdNativeLayoutBinding
 import com.edxavier.wheels_equivalent.db.*
 import com.google.android.gms.ads.AdListener
@@ -33,11 +31,6 @@ import com.google.android.gms.ads.nativead.NativeAdView
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.pixplicity.easyprefs.library.Prefs
 import com.raizlabs.android.dbflow.config.FlowManager
-import kotlinx.android.synthetic.main.activity_calculadora.*
-import kotlinx.android.synthetic.main.card_nuevo.*
-import kotlinx.android.synthetic.main.card_original.*
-import kotlinx.android.synthetic.main.card_resultados.*
-import kotlinx.android.synthetic.main.dialog_inputs.view.*
 import java.util.*
 import kotlin.math.roundToInt
 
@@ -78,7 +71,7 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
 
     override fun onPurchaseHistoryRestored() {}
 
-    override fun onProductPurchased(productId: String, details: TransactionDetails?) {}
+    override fun onProductPurchased(productId: String, details: PurchaseInfo?) {}
 
     override fun onBillingError(errorCode: Int, error: Throwable?) {}
 
@@ -89,8 +82,8 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         //setContentView(R.layout.activity_calculadora)
         binding = ActivityCalculadoraBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        bottom_bar.replaceMenu(R.menu.menu_main)
-        setSupportActionBar(bottom_bar)
+        binding.bottomBar.replaceMenu(R.menu.menu_main)
+        setSupportActionBar(binding.bottomBar)
         analytics = FirebaseAnalytics.getInstance(this)
 
         bp = BillingProcessor.newBillingProcessor(this, BuildConfig.APP_BILLING_PUB_KEY, BuildConfig.MERCHANT_ID, this)
@@ -101,7 +94,7 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         preestablecerDatos()
         calcular_equivalencia()
 
-        btnShowEquivalences.setOnClickListener {
+        binding.cardOriginal.btnShowEquivalences.setOnClickListener {
             //float ancho_o = Float.valueOf(ancho_orig.getSelectedItem().toString());
             //float perfil_o = Float.valueOf(perfil_orig.getSelectedItem().toString());
             //float diametro_o = Float.valueOf(diametro_orig.getSelectedItem().toString());
@@ -116,20 +109,23 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
             startActivityForResult(intent, 0)
         }
 
-        fab_add.setOnClickListener { fab ->
+        binding.fabAdd.setOnClickListener {
             val dialog = MaterialDialog(this@Calculadora)
                     .positiveButton(text = "Guardar").positiveButton { mDialog ->
                         val customView = mDialog.getCustomView()
-                        if(customView.input_perfil.text.toString().isNotEmpty()){
-                            val perfil = customView.input_perfil.text.toString().toInt()
+                        val input_perfil = customView.findViewById<EditText>(R.id.input_perfil)
+                        val input_ancho = customView.findViewById<EditText>(R.id.input_ancho)
+                        val input_rin = customView.findViewById<EditText>(R.id.input_rin)
+                        if(input_perfil.text.toString().isNotEmpty()){
+                            val perfil = input_perfil.text.toString().toInt()
                             FlowManager.getModelAdapter<Perfil>(Perfil::class.java).save(Perfil(perfil))
                         }
-                        if(customView.input_ancho.text.toString().isNotEmpty()) {
-                            val ancho = customView.input_ancho.text.toString().toInt()
+                        if(input_ancho.text.toString().isNotEmpty()) {
+                            val ancho = input_ancho.text.toString().toInt()
                             FlowManager.getModelAdapter<Ancho>(Ancho::class.java).save(Ancho(ancho))
                         }
-                        if(customView.input_rin.text.toString().isNotEmpty()) {
-                            val rin = customView.input_rin.text.toString().toInt()
+                        if(input_rin.text.toString().isNotEmpty()) {
+                            val rin = input_rin.text.toString().toInt()
                             FlowManager.getModelAdapter<Rin>(Rin::class.java).save(Rin(rin))
                         }
 
@@ -151,30 +147,33 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
 
 
 
-        original_perfil2.setAdapter(perfilesAdapter!!)
-        original_ancho2.setAdapter(anchurasAdapter!!)
-        original_diametro2.setAdapter(rinesAdapter!!)
-        original_carga.setAdapter(cargasAdapter!!)
-        original_velocidad.setAdapter(velocidadesAdapter!!)
+        with(binding.cardOriginal){
+            originalPerfil2.setAdapter(perfilesAdapter!!)
+            originalAncho2.setAdapter(anchurasAdapter!!)
+            originalDiametro2.setAdapter(rinesAdapter!!)
+            originalCarga.setAdapter(cargasAdapter!!)
+            originalVelocidad.setAdapter(velocidadesAdapter!!)
 
-        nuevo_perfil2.setAdapter(perfilesAdapter!!)
-        nuevo_ancho2.setAdapter(anchurasAdapter!!)
-        nuevo_diametro2.setAdapter(rinesAdapter!!)
-        nuevo_carga.setAdapter(cargasAdapter!!)
-        nuevo_velocidad.setAdapter(velocidadesAdapter!!)
+            originalPerfil2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia() }
+            originalAncho2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
+            originalDiametro2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
+            originalCarga.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
+            originalVelocidad.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
+        }
 
-        original_perfil2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia() }
-        original_ancho2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
-        original_diametro2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
-        original_carga.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
-        original_velocidad.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
+        with(binding.cardNew){
+            nuevoPerfil2.setAdapter(perfilesAdapter!!)
+            nuevoAncho2.setAdapter(anchurasAdapter!!)
+            nuevoDiametro2.setAdapter(rinesAdapter!!)
+            nuevoCarga.setAdapter(cargasAdapter!!)
+            nuevoVelocidad.setAdapter(velocidadesAdapter!!)
 
-        nuevo_perfil2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
-        nuevo_ancho2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
-        nuevo_diametro2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
-        nuevo_carga.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
-        nuevo_velocidad.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
-
+            nuevoPerfil2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
+            nuevoAncho2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
+            nuevoDiametro2.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
+            nuevoCarga.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
+            nuevoVelocidad.setOnItemSelectedListener { _, _, _, _ ->  calcular_equivalencia()}
+        }
         val npi = Prefs.getInt("npi", 4)
         val nai = Prefs.getInt("nai", 4)
         val ndi = Prefs.getInt("ndi", 4)
@@ -188,17 +187,20 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         val ovi = Prefs.getInt("ovi", 4)
 
         try {
-            original_diametro2.selectedIndex = odi
-            original_perfil2.selectedIndex = opi
-            original_ancho2.selectedIndex = oai
-            original_carga.selectedIndex = oci
-            original_velocidad.selectedIndex = ovi
-            /**/
-            nuevo_diametro2.selectedIndex = ndi
-            nuevo_perfil2.selectedIndex = npi
-            nuevo_ancho2.selectedIndex = nai
-            nuevo_carga.selectedIndex = nci
-            nuevo_velocidad.selectedIndex = nvi
+            with(binding.cardOriginal){
+                originalDiametro2.selectedIndex = odi
+                originalPerfil2.selectedIndex = opi
+                originalAncho2.selectedIndex = oai
+                originalCarga.selectedIndex = oci
+                originalVelocidad.selectedIndex = ovi
+            }
+            with(binding.cardNew){
+                nuevoDiametro2.selectedIndex = ndi
+                nuevoPerfil2.selectedIndex = npi
+                nuevoAncho2.selectedIndex = nai
+                nuevoCarga.selectedIndex = nci
+                nuevoVelocidad.selectedIndex = nvi
+            }
         } catch (ignored: Exception) {
         }
     }
@@ -206,17 +208,17 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
     private fun loadBanner(){
         if (!Prefs.getBoolean("ads_removed", false)) {
 
-            adView.visibility = View.GONE
+            binding.adView.visibility = View.GONE
             val adRequest = AdRequest.Builder().build()
-            adView.loadAd(adRequest)
-            adView.adListener = object : AdListener() {
+            binding.adView.loadAd(adRequest)
+            binding.adView.adListener = object : AdListener() {
                 override fun onAdLoaded() {
                     super.onAdLoaded()
-                    adView.visibility = View.VISIBLE
+                    binding.adView.visibility = View.VISIBLE
                 }
             }
         } else {
-            adView.visibility = View.GONE
+            binding.adView.visibility = View.GONE
         }
 
     }
@@ -301,35 +303,42 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
 
     private fun calcular_equivalencia() {
 
-        Prefs.putInt("opi", original_perfil2.selectedIndex)
-        Prefs.putInt("oai", original_ancho2.selectedIndex)
-        Prefs.putInt("odi", original_diametro2.selectedIndex)
-        Prefs.putInt("oci", original_carga.selectedIndex)
-        Prefs.putInt("ovi", original_velocidad.selectedIndex)
+        with(binding.cardOriginal){
+            Prefs.putInt("opi", originalPerfil2.selectedIndex)
+            Prefs.putInt("oai", originalAncho2.selectedIndex)
+            Prefs.putInt("odi", originalDiametro2.selectedIndex)
+            Prefs.putInt("oci", originalCarga.selectedIndex)
+            Prefs.putInt("ovi", originalVelocidad.selectedIndex)
+        }
+        with(binding.cardNew){
+            Prefs.putInt("npi", nuevoPerfil2.selectedIndex)
+            Prefs.putInt("nai", nuevoAncho2.selectedIndex)
+            Prefs.putInt("ndi", nuevoDiametro2.selectedIndex)
+            Prefs.putInt("nci", nuevoCarga.selectedIndex)
+            Prefs.putInt("nvi", nuevoVelocidad.selectedIndex)
+        }
 
-        Prefs.putInt("npi", nuevo_perfil2.selectedIndex)
-        Prefs.putInt("nai", nuevo_ancho2.selectedIndex)
-        Prefs.putInt("ndi", nuevo_diametro2.selectedIndex)
-        Prefs.putInt("nci", nuevo_carga.selectedIndex)
-        Prefs.putInt("nvi", nuevo_velocidad.selectedIndex)
+        val cardNew = binding.cardNew
+        val cardOriginal = binding.cardOriginal
 
-        ancho_o = java.lang.Float.valueOf(anchurasAdapter!!.getItem(original_ancho2.selectedIndex)!!.toString())
-        perfil_o = java.lang.Float.valueOf(perfilesAdapter!!.getItem(original_perfil2.selectedIndex)!!.toString())
-        diametro_o = java.lang.Float.valueOf(rinesAdapter!!.getItem(original_diametro2.selectedIndex)!!.toString())
-        icargaO = cargasAdapter!!.getItem(original_carga.selectedIndex)!!.toString()
-        ivelocidadO = velocidadesAdapter!!.getItem(original_velocidad.selectedIndex)!!.toString()
 
-        val vcargaO = cargasAdapter!!.getItem(original_carga.selectedIndex)!!.valor
-        val vvelocidadO = velocidadesAdapter!!.getItem(original_velocidad.selectedIndex)!!.valor
+        ancho_o = java.lang.Float.valueOf(anchurasAdapter!!.getItem(cardOriginal.originalAncho2.selectedIndex)!!.toString())
+        perfil_o = java.lang.Float.valueOf(perfilesAdapter!!.getItem(cardOriginal.originalPerfil2.selectedIndex)!!.toString())
+        diametro_o = java.lang.Float.valueOf(rinesAdapter!!.getItem(cardOriginal.originalDiametro2.selectedIndex)!!.toString())
+        icargaO = cargasAdapter!!.getItem(cardOriginal.originalCarga.selectedIndex)!!.toString()
+        ivelocidadO = velocidadesAdapter!!.getItem(cardOriginal.originalVelocidad.selectedIndex)!!.toString()
 
-        val ancho_n = java.lang.Float.valueOf(anchurasAdapter!!.getItem(nuevo_ancho2.selectedIndex)!!.toString())
-        val perfil_n = java.lang.Float.valueOf(perfilesAdapter!!.getItem(nuevo_perfil2.selectedIndex)!!.toString())
-        val diametro_n = java.lang.Float.valueOf(rinesAdapter!!.getItem(nuevo_diametro2.selectedIndex)!!.toString())
-        val icargaN = cargasAdapter!!.getItem(nuevo_carga.selectedIndex)!!.toString()
-        val ivelocidadN = velocidadesAdapter!!.getItem(nuevo_velocidad.selectedIndex)!!.toString()
+        val vcargaO = cargasAdapter!!.getItem(cardOriginal.originalCarga.selectedIndex)!!.valor
+        val vvelocidadO = velocidadesAdapter!!.getItem(cardOriginal.originalVelocidad.selectedIndex)!!.valor
 
-        val vcargaN = cargasAdapter!!.getItem(nuevo_carga.selectedIndex)!!.valor
-        val vvelocidadN = velocidadesAdapter!!.getItem(nuevo_velocidad.selectedIndex)!!.valor
+        val ancho_n = java.lang.Float.valueOf(anchurasAdapter!!.getItem(cardNew.nuevoAncho2.selectedIndex)!!.toString())
+        val perfil_n = java.lang.Float.valueOf(perfilesAdapter!!.getItem(cardNew.nuevoPerfil2.selectedIndex)!!.toString())
+        val diametro_n = java.lang.Float.valueOf(rinesAdapter!!.getItem(cardNew.nuevoDiametro2.selectedIndex)!!.toString())
+        val icargaN = cargasAdapter!!.getItem(cardNew.nuevoCarga.selectedIndex)!!.toString()
+        val ivelocidadN = velocidadesAdapter!!.getItem(cardNew.nuevoVelocidad.selectedIndex)!!.toString()
+
+        val vcargaN = cargasAdapter!!.getItem(cardNew.nuevoCarga.selectedIndex)!!.valor
+        val vvelocidadN = velocidadesAdapter!!.getItem(cardNew.nuevoVelocidad.selectedIndex)!!.valor
 
 
         val diametro_total_orig = (ancho_o!! * (perfil_o / 100) * 2 + diametro_o * 25.4).roundToInt().toFloat()
@@ -339,15 +348,15 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
         //val diferencia_mm = diametro_total_nuevo - diametro_total_orig
 
 
-        val conc_velocidad = findViewById<TextView>(R.id.conclusion2)
+        //val conc_velocidad = findViewById<TextView>(R.id.conclusion2)
+        val cardRes = binding.cardResults
+        cardRes.txtMedidasNuevo.text = String.format(getString(R.string.nuevo), String.format(Locale.getDefault(), "%.0f", ancho_n), String.format(Locale.getDefault(), "%.0f", perfil_n), String.format(Locale.getDefault(), "%.0f", diametro_n), icargaN, ivelocidadN)
+        cardRes.txtMedidasOriginal.text = String.format(getString(R.string.original), String.format(Locale.getDefault(), "%.0f", ancho_o), String.format(Locale.getDefault(), "%.0f", perfil_o), String.format(Locale.getDefault(), "%.0f", diametro_o), icargaO, ivelocidadO)
 
-        txt_medidas_nuevo.text = String.format(getString(R.string.nuevo), String.format(Locale.getDefault(), "%.0f", ancho_n), String.format(Locale.getDefault(), "%.0f", perfil_n), String.format(Locale.getDefault(), "%.0f", diametro_n), icargaN, ivelocidadN)
-        txt_medidas_original.text = String.format(getString(R.string.original), String.format(Locale.getDefault(), "%.0f", ancho_o), String.format(Locale.getDefault(), "%.0f", perfil_o), String.format(Locale.getDefault(), "%.0f", diametro_o), icargaO, ivelocidadO)
 
 
-
-        txt_diametro_original.text = String.format(getString(R.string.diameter), String.format(Locale.getDefault(), "%.0f", diametro_total_orig), String.format(Locale.getDefault(), "%.0f", java.lang.Float.valueOf(vcargaO)), vvelocidadO)
-        txt_diametro_nuevo.text = String.format(getString(R.string.diameter), String.format(Locale.getDefault(), "%.0f", diametro_total_nuevo), String.format(Locale.getDefault(), "%.0f", java.lang.Float.valueOf(vcargaN)), vvelocidadN)
+        cardRes.txtDiametroOriginal.text = String.format(getString(R.string.diameter), String.format(Locale.getDefault(), "%.0f", diametro_total_orig), String.format(Locale.getDefault(), "%.0f", java.lang.Float.valueOf(vcargaO)), vvelocidadO)
+        cardRes.txtDiametroNuevo.text = String.format(getString(R.string.diameter), String.format(Locale.getDefault(), "%.0f", diametro_total_nuevo), String.format(Locale.getDefault(), "%.0f", java.lang.Float.valueOf(vcargaN)), vvelocidadN)
 
         var concl = resources.getString(R.string.dif_porc) + " " + String.format(Locale.getDefault(), "%.2f", diferencia_porc)
 
@@ -358,15 +367,15 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
 
         if (diferencia_porc >= -3.0 && diferencia_porc <= 3.0) {
             concl += " " + resources.getString(R.string.dif_porc_si)
-            conclusion.setTextColor(ContextCompat.getColor(this, R.color.md_green_700))
-            conc_velocidad.setTextColor(ContextCompat.getColor(this, R.color.md_green_700))
+            cardRes.conclusion.setTextColor(ContextCompat.getColor(this, R.color.md_green_700))
+            cardRes.conclusion2.setTextColor(ContextCompat.getColor(this, R.color.md_green_700))
         } else {
             concl += " " + resources.getString(R.string.dif_porc_no)
-            conclusion.setTextColor(ContextCompat.getColor(this, R.color.md_yellow_700))
-            conc_velocidad.setTextColor(ContextCompat.getColor(this, R.color.md_yellow_700))
+            cardRes.conclusion.setTextColor(ContextCompat.getColor(this, R.color.md_yellow_700))
+            cardRes.conclusion2.setTextColor(ContextCompat.getColor(this, R.color.md_yellow_700))
         }
 
-        conclusion.text = concl
+        cardRes.conclusion.text = concl
 
         /*
             W = vel/diametro (rad/s)
@@ -385,28 +394,25 @@ class Calculadora : AppCompatActivity(), BillingProcessor.IBillingHandler {
 
         //teniendo las rpm del neumatico original a 100kph calculamos la velociada del nuevo a esas mismas rpm
         val velocidad = w * diametroNuevo * 3600 / 1000 //kmh
-        txt_rpm.text = String.format(getString(R.string.rpm), String.format(Locale.getDefault(), "%.1f", rpm), String.format(Locale.getDefault(), "%.1f", 100.0f))
-        txt_rpm_new.text = String.format(getString(R.string.rpm), String.format(Locale.getDefault(), "%.1f", rpm), String.format(Locale.getDefault(), "%.1f", velocidad))
+        cardRes.txtRpm.text = String.format(getString(R.string.rpm), String.format(Locale.getDefault(), "%.1f", rpm), String.format(Locale.getDefault(), "%.1f", 100.0f))
+        cardRes.txtRpmNew.text = String.format(getString(R.string.rpm), String.format(Locale.getDefault(), "%.1f", rpm), String.format(Locale.getDefault(), "%.1f", velocidad))
 
         //txt_vel.setText(String.format(getString(R.string.velocity), String.format(Locale.getDefault(),"%.1f", 100.0f)));
 
         //txt_velN.setText(String.format(getString(R.string.velocity), String.format(Locale.getDefault(),"%.1f", velocidad)));
 
-        conc_velocidad.text = getString(R.string.conc_vel) + " " + String.format("%.1f", velocidad) + " km/h"
+        cardRes.conclusion2.text = getString(R.string.conc_vel) + " " + String.format("%.1f", velocidad) + " km/h"
 
     }
 
 
     private fun isTimeToAds(): Boolean {
         val ne = Prefs.getInt("num_show_interstical", 0)
-        //val sa = Prefs.getInt("show_after", 0)
-        //Log.e("EDER", String.valueOf(ne));
-        //Log.e("EDER", String.valueOf(sa));
         Prefs.putInt("num_show_interstical", ne + 1)
-        return if (Prefs.getInt("num_show_interstical", 0) >= Prefs.getInt("show_after", 4)) {
+        return if (Prefs.getInt("num_show_interstical", 0) >= Prefs.getInt("show_after", 2)) {
             Prefs.putInt("num_show_interstical", 0)
             val r = Random()
-            val rnd = r.nextInt(5 - 3) + 3
+            val rnd = r.nextInt(4 - 2) + 2
             Prefs.putInt("show_after", rnd)
             true
         } else

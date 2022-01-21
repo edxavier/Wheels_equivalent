@@ -46,7 +46,6 @@ class Equivalences : AppCompatActivity() {
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         original = findViewById<View>(R.id.txtOriginal) as TextView
         val originalSpeed = findViewById<View>(R.id.txtSpeed) as TextView
-        val container = findViewById<View>(R.id.container) as LinearLayout
         val recyclerView = findViewById<View>(R.id.recycler_eq) as RecyclerView
         analytics = FirebaseAnalytics.getInstance(this)
         setSupportActionBar(toolbar)
@@ -125,7 +124,6 @@ class Equivalences : AppCompatActivity() {
         val diametro_original = (ancho_o * (perfil_o / 100) * 2 + diametro_o * 25.4) / 1000 //metros
         val diametro_nuevo = v / 1000 //metros
         val diferencia_porc = (diametro_total_nuevo / diametro_total_orig - 1) * 100
-        val diferencia_mm = diametro_total_nuevo - diametro_total_orig
         equivalence.diference = diferencia_porc
         equivalence.isEquivalent = diferencia_porc >= -3.0 && diferencia_porc <= 3.0
 

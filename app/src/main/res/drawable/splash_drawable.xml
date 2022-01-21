@@ -6,7 +6,7 @@
 
     <item
         android:gravity="center"
-        android:drawable="@drawable/ic_personal_logo">
+        android:drawable="@drawable/ic_edxr_logo">
     </item>
     <!--
 -->
