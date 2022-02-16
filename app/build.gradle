@@ -11,8 +11,8 @@ android {
         applicationId "com.edxavier.wheels_equivalent"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 19
-        versionName "2022.01.3.0.1-eqv"
+        versionCode 20
+        versionName "2022.01.3.0.2-eqv"
         multiDexEnabled true
     }
 
