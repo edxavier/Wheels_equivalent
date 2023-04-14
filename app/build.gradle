@@ -2,17 +2,16 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion '30.0.2'
+    compileSdkVersion 33
     viewBinding {
         enabled = true
     }
     defaultConfig {
         applicationId "com.edxavier.wheels_equivalent"
         minSdkVersion 21
-        targetSdkVersion 31
-        versionCode 20
-        versionName "2022.01.3.0.2-eqv"
+        targetSdkVersion 33
+        versionCode 21
+        versionName "2023.04.3.0.3-eqv"
         multiDexEnabled true
     }
 
@@ -31,12 +30,11 @@ android {
             buildConfigField "String", "MERCHANT_ID", project.property('MERCHANT_ID')
         }
     }
-    lintOptions {
-        checkReleaseBuilds false
-        // Or, if you prefer, you can continue to check for errors in release builds,
-        // but continue the build even when errors are found:
+    lint {
         abortOnError false
+        checkReleaseBuilds false
     }
+    namespace 'com.edxavier.wheels_equivalent'
 }
 
 dependencies {
@@ -44,28 +42,28 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     //compile 'com.android.support:multidex:1.0.1'
 
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.palette:palette-ktx:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
     implementation 'androidx.cardview:cardview:1.0.0'
 
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-ktx:1.10.0'
     //implementation 'androidx.room:room-runtime:2.1.0-alpha04'
     //annotationProcessor 'androidx.room:room-compiler:2.1.0-alpha01'
     //kapt 'androidx.room:room-compiler:2.1.0-alpha04'
 
 
-    implementation 'com.google.firebase:firebase-core:20.0.2'
-    implementation 'com.google.firebase:firebase-ads:20.5.0'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.firebase:firebase-ads:22.0.0'
     implementation 'com.google.firebase:firebase-crash:16.2.1'
 
-    implementation 'com.pixplicity.easyprefs:library:1.9.0'
+    implementation 'com.pixplicity.easyprefs:EasyPrefs:1.10.0'
     implementation 'com.anjlab.android.iab.v3:library:2.0.3'
 
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     implementation 'com.jaredrummler:material-spinner:1.3.1'
 
@@ -74,7 +72,7 @@ dependencies {
     implementation "com.github.Raizlabs.DBFlow:dbflow-core:4.2.4"
     implementation "com.github.Raizlabs.DBFlow:dbflow:4.2.4"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10"
     implementation 'com.airbnb.android:lottie:4.2.2'
 
 
