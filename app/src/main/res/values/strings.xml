@@ -11,14 +11,14 @@
     <string name="diameter">Diámetro = %1$s mm \nCarga max. = %2$s kg \nVel. max. = %3$s km/h</string>
 
 
-    <string name="paso1">Medida de neumático original</string>
-    <string name="paso2">Medida de neumático nuevo</string>
+    <string name="paso1">Neumático original</string>
+    <string name="paso2">Neumático nuevo</string>
     <string name="resultados">Resultados</string>
-    <string name="dif_porc">El neumático nuevo o deseado posee un diámetro &#32;&#32;</string>
-    <string name="dif_porc_mas">% más grande que el original\n\n Por lo tanto se concluye que los neumáticos &#32;&#32;</string>
-    <string name="dif_porc_menos">% más pequeño que el original.\n\nPor lo tanto se concluye que los neumáticos &#32;&#32;</string>
-    <string name="dif_porc_no"> <b>no son equivalentes entre si según  la máxima diferencia en diámetro de ±3.0% </b></string>
-    <string name="dif_porc_si"><b>son equivalentes entre si según  la máxima diferencia en diámetro de ±3.0%</b> </string>
+    <string name="dif_porc">El neumático nuevo posee un diámetro &#32;&#32;</string>
+    <string name="dif_porc_mas"> más grande que el original\n\n Por lo tanto se concluye que los neumáticos &#32;&#32;</string>
+    <string name="dif_porc_menos"> más pequeño que el original.\n\nPor lo tanto se concluye que los neumáticos &#32;&#32;</string>
+    <string name="dif_porc_no"> <b> no son equivalentes entre si según  la máxima diferencia en diámetro de ±3.0% </b></string>
+    <string name="dif_porc_si"><b> son equivalentes entre si según  la máxima diferencia en diámetro de ±3.0%</b> </string>
 
     <string name="conc_vel"><b>Ten en cuenta que cuando tu marcador indique una velocidad de 100 km/h tu velocidad real será de </b> </string>
 
@@ -33,7 +33,7 @@
 
         Índice de capacidad de carga igual o superior al indicado por el fabricante.\n\n
         Código de velocidad igual o superior a los tomados en la ficha técnica del vehículo.\n\n
-        Igual diámetro exterior, con una tolerancia de +-3.0 % con respecto al neumático original.\n\n
+        Igual diámetro exterior, con una tolerancia de ±3.0 % con respecto al neumático original.\n\n
 
         Verifica que el nuevo neumático no sea muy ancho ya que podría rozar en la carrocería
     </string>
@@ -140,5 +140,14 @@
     <string name="menu_privacy">Política de privacidad</string>
     <string name="agregar">Añadir</string>
     <string name="dialogo_nuevas_medidas">Ingrese los datos requeridos, de lo contrario deje la caja en blanco.</string>
+    <string name="title_activity_main_compose">MainCompose</string>
+    <string name="data">Datos</string>
+    <string name="diameter_label" >Diametro</string>
+    <string name="max_load_label">Carga Max.</string>
+    <string name="max_speed_label">Vel. Max.</string>
+    <string name="speedometer">Velocimetro</string>
+    <string name="compare">Comparar</string>
+    <string name="suggestions">Sugerencias</string>
+    <string name="suggestions_note">Nota: Las siguientes sugerencias son basadas en calculos, es posible que algunas no existan en el mercado</string>
 
 </resources>

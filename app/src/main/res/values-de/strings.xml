@@ -5,8 +5,8 @@
     <string name="conc_vel">"<b>Beachten Sie, dass, wenn Ihr Tachometer eine Geschwindigkeit von 100 km / h anzeigt. Ihre tatsächliche Geschwindigkeit ist </b> "</string>
     <string name="diametro">Felge (inch)</string>
     <string name="dif_porc">Der neue Reifen hat einen Durchmesser &#32;&#32;</string>
-    <string name="dif_porc_mas">% größer als das Original ist es daher, dass die Reifen abgeschlossen</string>
-    <string name="dif_porc_menos">% kleiner als das Original. Folge folgern, dass die Reifen</string>
+    <string name="dif_porc_mas"> größer als das Original ist es daher, dass die Reifen abgeschlossen</string>
+    <string name="dif_porc_menos"> kleiner als das Original. Folge folgern, dass die Reifen</string>
     <string name="dif_porc_no"><b> sind nicht gleichbedeutend mit der maximalen Durchmesserdifferenz von ± 3,0% </b></string>
     <string name="dif_porc_si"><b> entsprechen einander entsprechend der maximalen Durchmesserdifferenz von ± 3,0% </b></string>
     <string name="eq_diff">Unterschied (%)</string>
@@ -45,5 +45,14 @@
     <string name="menu_privacy">Datenschutzrichtlinie</string>
     <string name="agregar">Añadir</string>
     <string name="dialogo_nuevas_medidas">Geben Sie die erforderlichen Daten ein, andernfalls lassen Sie das Feld leer.</string>
+    <string name="data">Daten</string>
+    <string name="diameter_label" >Durchmesser</string>
+    <string name="max_load_label">Tragfähigkeit</string>
+    <string name="max_speed_label">Höchstgeschwindigkeit</string>
+    <string name="speedometer">Tachometer</string>
+    <string name="compare">Compare</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="suggestions_note">Hinweis: Die folgenden Vorschläge basieren auf Berechnungen. Es ist möglich, dass einige nicht auf dem Markt vorhanden sind</string>
+
 
 </resources>

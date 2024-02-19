@@ -1,23 +1,20 @@
 package com.edxavier.wheels_equivalent
 
+import android.app.Application
 import android.content.Context
-import androidx.multidex.MultiDex
-import androidx.multidex.MultiDexApplication
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
 import com.pixplicity.easyprefs.library.Prefs
-import com.raizlabs.android.dbflow.config.FlowManager
 
 /**
  * Created by Eder Xavier Rojas on 16/11/2015.
  */
-class MyApplication : MultiDexApplication() {
+class MyApplication : Application() {
     private lateinit var appOpenManager:AppOpenManager
 
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
-        MultiDex.install(this)
     }
 
     override fun onCreate() {
@@ -29,7 +26,7 @@ class MyApplication : MultiDexApplication() {
                 .setPrefsName(packageName)
                 .setUseDefaultSharedPreference(true)
                 .build()
-        FlowManager.init(this)
+
         //MobileAds.initialize(this, "ca-app-pub-9964109306515647~1012826218")
         MobileAds.initialize(this)
         val requestConfig = RequestConfiguration.Builder()

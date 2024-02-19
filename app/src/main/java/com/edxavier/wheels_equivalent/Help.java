@@ -33,7 +33,7 @@ public class Help extends AppCompatActivity {
             AdRequest adRequest = new AdRequest.Builder().build();
             mAdView.loadAd(adRequest);
             mAdView2.loadAd(adRequest);
-            MainActivity.requestAds(this);
+            // MainActivity.requestAds(this);
 
             mAdView.setAdListener(new AdListener() {
                 @Override

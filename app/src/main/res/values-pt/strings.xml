@@ -5,8 +5,8 @@
     <string name="conc_vel"><b> Observe que quando você marcar indica uma velocidade de 100 quilômetros por hora a velocidade real é </b></string>
     <string name="diametro">Rin (em)</string>
     <string name="dif_porc">" O novo pneu tem um diâmetro ou desejado &#32;&#32;"</string>
-    <string name="dif_porc_mas">"% maior que o original Concluímos, pois, que os pneus "</string>
-    <string name="dif_porc_menos">"% Menor do que o original. Portanto, conclui-se que os pneus "</string>
+    <string name="dif_porc_mas">" maior que o original Concluímos, pois, que os pneus "</string>
+    <string name="dif_porc_menos">" menor do que o original. Portanto, conclui-se que os pneus "</string>
     <string name="dif_porc_no"><b> não são equivalentes uma à outra de acordo com a diferença de diâmetros de ± 3,0% </b></string>
     <string name="dif_porc_si"><b> são equivalentes uma à outra de acordo com a diferença de diâmetros de ± 3,0% </b></string>
     <string name="eq_diff">Diferença (%)</string>
@@ -61,4 +61,12 @@
     <string name="menu_privacy">Política de privacidade</string>
     <string name="agregar">Añadir</string>
     <string name="dialogo_nuevas_medidas">Digite os dados necessários, caso contrário, deixe a caixa em branco.</string>
+    <string name="data">Dados</string>
+    <string name="diameter_label">Diâmetro</string>
+    <string name="max_load_label">Carregamento Max.</string>
+    <string name="max_speed_label">Velocidade Max.</string>
+    <string name="speedometer">Velocímetro</string>
+    <string name="compare">Compare</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="suggestions_note">Nota: As sugestões a seguir são baseadas em cálculos, é possível que algumas não existam no mercado</string>
 </resources>

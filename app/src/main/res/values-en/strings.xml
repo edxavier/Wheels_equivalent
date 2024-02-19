@@ -5,8 +5,8 @@
     <string name="diametro">Rim (inch)</string>
     <string name="dif_porc">The new tire has a diameter&#32;</string>
     <string name="conc_vel">"<b>Note that when your speedometer indicates a speed of 100 kph your actual speed is </b> "</string>
-    <string name="dif_porc_mas">% larger than the original \n\n It is therefore concluded that the tires</string>
-    <string name="dif_porc_menos">% smaller than the original. \n  therefore conclude that the tires</string>
+    <string name="dif_porc_mas"> larger than the original \n\n It is therefore concluded that the tires</string>
+    <string name="dif_porc_menos"> smaller than the original. \n  therefore conclude that the tires</string>
     <string name="dif_porc_no"><b> are not equivalent to each other according to the maximum difference in diameter of ± 3.0% </b></string>
     <string name="dif_porc_si"><b> are  equivalent to each other according to the maximum difference in diameter of ± 3.0% </b></string>
     <string name="help1"><b> 1. How to read the side of your tire? </b></string>
@@ -128,5 +128,14 @@
     <string name="menu_privacy">Privacy Policy</string>
     <string name="agregar">Añadir</string>
     <string name="dialogo_nuevas_medidas">Enter the required data, otherwise leave the box blank.</string>
+    <string name="data">Data</string>
+    <string name="diameter_label" >Diameter</string>
+    <string name="max_load_label">Max. Load</string>
+    <string name="max_speed_label">Max. Speed</string>
+    <string name="speedometer">Speedometer</string>
+    <string name="compare">Compare</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="suggestions_note">Note: The following suggestions are based on calculations, it is possible that some do not exist in the market</string>
+
 
 </resources>

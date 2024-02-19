@@ -5,8 +5,8 @@
     <string name="conc_vel">"<b> Обратите внимание, что когда ваш спидометр показывает скорость 100 км / ч, ваша фактическая скорость равна  </b> "</string>
     <string name="diametro">Обод (дюймы)</string>
     <string name="dif_porc">Новая шина имеет диаметр&#32;</string>
-    <string name="dif_porc_mas">"% Больше, чем у оригинала. Поэтому делается вывод, что шины "</string>
-    <string name="dif_porc_menos">% Меньше, чем оригинал. Поэтому сделать вывод, что шины</string>
+    <string name="dif_porc_mas">" Больше, чем у оригинала. Поэтому делается вывод, что шины "</string>
+    <string name="dif_porc_menos"> Меньше, чем оригинал. Поэтому сделать вывод, что шины</string>
     <string name="dif_porc_no"><b> не эквивалентны друг другу в соответствии с максимальной разницей диаметров ± 3.0% </b></string>
     <string name="dif_porc_si"><b> эквивалентны друг другу в соответствии с максимальной разницей диаметров ± 3.0% </b></string>
     <string name="eq_diff">Разница (%)</string>
@@ -45,5 +45,13 @@
     <string name="menu_privacy">Политика конфиденциальности</string>
     <string name="agregar">Añadir</string>
     <string name="dialogo_nuevas_medidas">Введите необходимые данные, иначе оставьте поле пустым.</string>
+    <string name="data">Данные</string>
+    <string name="diameter_label">Диаметр</string>
+    <string name="max_load_label">Максимальная нагрузка</string>
+    <string name="max_speed_label">максимальная скорость</string>
+    <string name="speedometer">Спидометр</string>
+    <string name="compare">Compare</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="suggestions_note">Примечание. Следующие предложения основаны на расчетах, возможно, некоторые из них не существуют на рынке.</string>
 
 </resources>
