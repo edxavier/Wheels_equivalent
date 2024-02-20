@@ -31,6 +31,7 @@ fun MyBannerAd(modifier: Modifier = Modifier, adSize: AdSize) {
                 // currently added a test ad unit id.
 
                 setAdSize(adSize)
+                // adUnitId = "ca-app-pub-3940256099942544/6300978111"
                 adUnitId = context.getString(R.string.id_banner)
                 // calling load ad to load our ad.
                 loadAd(AdRequest.Builder().build())

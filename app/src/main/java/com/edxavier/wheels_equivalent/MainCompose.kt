@@ -146,12 +146,14 @@ class MainCompose : ComponentActivity(), PurchasesUpdatedListener, PurchasesResp
                                     }
                                 }
                             )
-                            if (!Prefs.getBoolean("ads_removed", false)) {
-                                MyBannerAd(adSize = getAdSize())
-                            }
                         }
                     },
-                    modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection)
+                    modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+                    bottomBar = {
+                        if (!Prefs.getBoolean("ads_removed", false)) {
+                            MyBannerAd(adSize = getAdSize())
+                        }
+                    }
                 ) {
                     Surface(
                         modifier = Modifier
@@ -190,10 +192,10 @@ class MainCompose : ComponentActivity(), PurchasesUpdatedListener, PurchasesResp
                                     selection = sel
                                     if(sel == 1){
                                         viewModel.getSuggestions()
-                                        /*if (isTimeToAds()) {
+                                        if (isTimeToAds()) {
                                             showInterstitial()
                                             requestInterstical()
-                                        }*/
+                                        }
                                     }
                                 },
                                 modifier = Modifier
