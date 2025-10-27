@@ -33,6 +33,7 @@ import com.afollestad.materialdialogs.customview.getCustomView
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingResult
+import com.android.billingclient.api.PendingPurchasesParams
 import com.android.billingclient.api.Purchase
 import com.android.billingclient.api.PurchasesResponseListener
 import com.android.billingclient.api.PurchasesUpdatedListener
@@ -65,7 +66,7 @@ class MainCompose : ComponentActivity(), PurchasesUpdatedListener, PurchasesResp
         setTheme(R.style.MatAppTheme)
         billingClient =  BillingClient.newBuilder(this)
             .setListener(this)
-            .enablePendingPurchases()
+            .enablePendingPurchases(PendingPurchasesParams.newBuilder().enableOneTimeProducts().build())
             .build()
         startBillingConnection()
         lifecycleScope.launch (Dispatchers.IO){
@@ -331,7 +332,7 @@ class MainCompose : ComponentActivity(), PurchasesUpdatedListener, PurchasesResp
         return if (Prefs.getInt("num_show_interstical", 0) >= Prefs.getInt("show_after", 2)) {
             Prefs.putInt("num_show_interstical", 0)
             val r = Random()
-            val rnd = r.nextInt(4 - 2) + 2
+            val rnd = r.nextInt( 2) + 2
             Prefs.putInt("show_after", rnd)
             true
         } else
