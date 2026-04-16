@@ -8,7 +8,9 @@ import android.util.DisplayMetrics
 import android.util.Log
 import android.widget.EditText
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -19,6 +21,8 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
@@ -62,8 +66,17 @@ class MainCompose : ComponentActivity(), PurchasesUpdatedListener, PurchasesResp
     private var mInterstitialAd: InterstitialAd? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        // 1. Primero el tema de la App
         setTheme(R.style.MatAppTheme)
+        // 2. Forzamos iconos OSCUROS (Light style) porque tu app es clara
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.light(
+                android.graphics.Color.TRANSPARENT,
+                android.graphics.Color.TRANSPARENT
+            )
+        )
+        super.onCreate(savedInstanceState)
+
         billingClient =  BillingClient.newBuilder(this)
             .setListener(this)
             .enablePendingPurchases(PendingPurchasesParams.newBuilder().enableOneTimeProducts().build())
@@ -86,7 +99,7 @@ class MainCompose : ComponentActivity(), PurchasesUpdatedListener, PurchasesResp
 
                 Scaffold(
                     topBar = {
-                        Column {
+                        Column(modifier = Modifier.statusBarsPadding()){
                             TopAppBar(
                                 title = {
                                     Text(
@@ -152,13 +165,15 @@ class MainCompose : ComponentActivity(), PurchasesUpdatedListener, PurchasesResp
                     modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
                     bottomBar = {
                         if (!Prefs.getBoolean("ads_removed", false)) {
-                            MyBannerAd(adSize = getAdSize())
+                            Box(modifier = Modifier.navigationBarsPadding()) {
+                                MyBannerAd(adSize = getAdSize())
+                            }
                         }
                     }
-                ) {
+                ) {innerPadding ->
                     Surface(
                         modifier = Modifier
-                            .padding(it)
+                            .padding(innerPadding)
                             .fillMaxSize(),
                         color = MaterialTheme.colorScheme.background
                     ) {
